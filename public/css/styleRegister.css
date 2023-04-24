@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600&display=swap");
+
+html,body{
+  font-size: .938rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  font-family: 'Exo', sans-serif;
+  background-color: hsl(180, 7%, 5%);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container {
+  width: 520px;
+  height: 365px;
+  margin: auto;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+  
+.card{
+  height: 365px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 480px;
+  border-radius: 20px;
+  color: aliceblue;
+  text-align: center;
+  background-color: rgba(0,0,0,1) !important;
+}
+  
+.card-header{
+  text-align: center;
+  font-size: 33px;
+}
+
+.input-group-prepend span{
+  margin-left: 0.25rem;
+  width: 40px;
+  background-color: #005cb3;
+  color: rgb(0, 30, 55);
+  border: 0;
+  border-radius: 5px !important;
+}
+
+.form-group{
+  margin-left: -1.25rem;
+}
+/*============================== BUTTON ==============================*/
+
+.register_btn{
+  color: black;
+  background-color: #005cb3;
+  width: 100px;
+  margin-left: -6rem;
+}
+
+.home__button{
+  border-radius: 3px;
+  margin-left: -1.25rem;
+  margin-top: 1rem;
+}
+
+.register_btn:hover{
+  color: black;
+  background-color: white;
+}
+
+.links{
+  color: white;
+}
+
+.links a{
+  margin-left: 4px;
+}
+
+/*============================== SHAPE ==============================*/
+
+.shape{
+  background-color: rgba(0, 140, 255, 0.534);
+  filter: blur(112px);
+  border-radius: 50%;
+}
+  
+.shape__big,
+.shape__small{
+  position: absolute;
+}
+  
+.shape__big{
+  width: 800px;
+  height: 500px;
+}
+  
+.shape__big{
+  left: -9rem;
+  top: -4rem;
+}
+  
+.shape__small{
+  width: 700px;
+  height: 350px;
+}
+  
+.shape__small{
+  right: 0rem;
+  bottom: 3rem;
+}

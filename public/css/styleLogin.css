@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600&display=swap");
+
+html,body{
+  font-size: .938rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  font-family: 'Exo', sans-serif;
+  background-color: hsl(180, 7%, 5%);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container {
+  width: 420px;
+  height: 400px;
+  margin: auto;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.card{
+  height: 395px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 420px;
+  border-radius: 20px;
+  color: aliceblue;
+  text-align: center;
+  background-color: rgba(0,0,0,1) !important;
+}
+
+.card-header{
+  text-align: center;
+  font-size: 33px;
+}
+
+.a .nav_link1{
+  font-size: 18px;
+}
+
+.input-group-prepend span{
+  width: 40px;
+  background-color: #005cb3;
+  color: rgb(0, 30, 55);
+  border:0 !important;
+}
+
+/*============================== FORGOT PASSWORD ==============================*/
+
+.btn-link{
+  margin-top: -0.5rem;
+}
+
+/*============================== REMEMBER ME ==============================*/
+
+.remember{
+  color: white;
+}
+
+.remember input{
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 1rem;
+}
+
+.form-check-input{
+  margin-top: 0.95rem;
+}
+
+.form-check-label{
+  margin-top: 10px;
+  margin-right: 110px;
+}
+
+/*============================== LOGIN BUTTON ==============================*/
+
+.login_btn{
+  color: black;
+  background-color: #005cb3;
+  width: 100px;
+}
+
+.login_btn:hover{
+  color: black;
+  background-color: white;
+}
+
+.links{
+  color: white;
+}
+
+.links a{
+  margin-left: 4px;
+}
+
+/*============================== SHAPE ==============================*/
+
+.shape{
+  background-color: rgba(0, 140, 255, 0.534);
+  filter: blur(112px);
+  border-radius: 50%;
+}
+
+.shape__big,
+.shape__small{
+  position: absolute;
+}
+
+.shape__big{
+  width: 800px;
+  height: 500px;
+}
+
+.shape__big{
+  left: -9rem;
+  top: -4rem;
+}
+
+.shape__small{
+  width: 700px;
+  height: 350px;
+}
+
+.shape__small{
+  right: 0rem;
+  bottom: 3rem;
+}
