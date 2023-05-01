@@ -7,9 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Brand extends Model
 {
+    protected $table = 'brand';
     use HasFactory;
-
-    public function cars(){
-        return $this->hasMany('App\Models\Car');
-    }
 }

@@ -34,11 +34,20 @@
                             <a href="#about" class="nav__link">About</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#popular" class="nav__link">Popular</a>
+                            <a href="#popular" class="nav__link">Available</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#features" class="nav__link">Features</a>
                         </li>
                         <li class="nav__item">
                             <a href="#featured" class="nav__link">Featured</a>
                         </li>
+                        <li class="nav__item">
+                            <a href="#offer" class="nav__link">Offers</a>
+                        </li>
+                        <!--<li class="nav__item">
+                            <a href="#end" class="nav__link">Bottom</a>
+                        </li>-->
                         @if(Auth::check())
                             <li class="nav__item">
                                 <a href="{{ route('home') }}" class="nav__link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre> 
@@ -150,6 +159,7 @@
                 <div class="popular__container container swiper">
                     <div class="swiper-wrapper">
                         <article class="popular__card swiper-slide">
+                            <div class="shape shape__smaller"></div>
                             <h1 class="popular__title">Porsche</h1>
                             <h3 class="popular__subtitle">Turbo S</h3>
 
@@ -175,6 +185,7 @@
                         </article>
 
                         <article class="popular__card swiper-slide">
+                            <div class="shape shape__smaller"></div>
                             <h1 class="popular__title">Porsche</h1>
                             <h3 class="popular__subtitle">Taycan</h3>
 
@@ -200,6 +211,7 @@
                         </article>
 
                         <article class="popular__card swiper-slide">
+                            <div class="shape shape__smaller"></div>
                             <h1 class="popular__title">Porsche</h1>
                             <h3 class="popular__subtitle">Turbo S Cross</h3>
 
@@ -225,6 +237,7 @@
                         </article>
 
                         <article class="popular__card swiper-slide">
+                            <div class="shape shape__smaller"></div>
                             <h1 class="popular__title">Porsche</h1>
                             <h3 class="popular__subtitle">Boxster 718</h3>
 
@@ -250,6 +263,7 @@
                         </article>
 
                         <article class="popular__card swiper-slide">
+                            <div class="shape shape__smaller"></div>
                             <h1 class="popular__title">Porsche</h1>
                             <h3 class="popular__subtitle">Cayman</h3>
 
@@ -279,9 +293,9 @@
             </section>
 
             <!--==================== FEATURES ====================-->
-            <section class="features section">
+            <section class="features section" id="features">
                 <h2 class="section__title">
-                    More Features
+                    TransEra Features
                 </h2>
 
                 <div class="feature__container container grid">
@@ -366,36 +380,41 @@
                             <div class="shape shape__smaller"></div>
                             <h1 class="featured__title">Porsche</h1>
                             <h3 class="featured__subtitle">Boxster 987</h3>
-                            <img src="{{asset('img/featured4.png')}}" alt="" class="featured__img">
+                            <a href={{ url('/cars/1') }}><img src="{{asset('img/featured4.png')}}" alt="" class="featured__img"/></a>
                             <h3 class="featured__price">$126,900</h3>
                         </article>
                         <article class="featured__card mix porsche">
                             <div class="shape shape__smaller"></div>
                             <h1 class="featured__title">Porsche</h1>
                             <h3 class="featured__subtitle">Panamera</h3>
-                            <img src="{{asset('img/featured5.png')}}" alt="" class="featured__img">
+                            <a href={{ url('/cars/3') }}><img src="{{asset('img/featured5.png')}}" alt="" class="featured__img"/></a>
                             <h3 class="featured__price">$126,900</h3>
                         </article>
                         <article class="featured__card mix bmw">
                             <div class="shape shape__smaller"></div>
                             <h1 class="featured__title">Bmw</h1>
                             <h3 class="featured__subtitle">M6 competition</h3>
-                            <a href="car"><img src="{{asset('img/featured6.png')}}" alt="" class="featured__img"/></a>
+                            <a href={{ url('/cars/2') }}><img src="{{asset('img/featured6.png')}}" alt="" class="featured__img"/></a>
                             <h3 class="featured__price">$156,900</h3>
                         </article>
-                        <article class="featured__card mix plus">
-                            <div class="shape shape__smaller"></div>
-                            <h1 class="featured__title">More</h1>
-                            <h3 class="featured__subtitle">Next time...</h3>
-                            <a href=""><img src="{{asset('img/pluss.png')}}" alt="" class="featured__img"/></a>
-                            <h3 class="featured__price"></h3>
-                        </article>
+                        @if(Auth::check())
+                            @if(Auth::user()->admLaw== 1)
+                                <article class="featured__card mix plus">
+                                    <div class="shape shape__smaller"></div>
+                                    <h1 class="featured__title">More</h1>
+                                    <h3 class="featured__subtitle">Next time...</h3>
+                                    <a href="{{ url('/add') }}"><img src="{{asset('img/pluss.png')}}" alt="" class="featured__img"/></a>
+                                    <h3 class="featured__price"></h3>
+                                </article>
+                            @endif
+                        @endif
+                        
                     </div>
                 </div>
             </section>
 
             <!--==================== OFFER ====================-->
-            <section class="offer section">
+            <section class="offer section" id="offer">
                 <div class="offer__container container grid">
                     <img src="{{asset('img/offer-bg.png')}}" alt="" class="offer__bg">
                     <div class="offer__data">
@@ -441,19 +460,19 @@
         </main>
 
         <!--==================== FOOTER ====================-->
-        <footer class="footer section">
+        <footer class="footer section" id="end">
             <div class="shape__big"></div>
             <div class="shape__small"></div>
 
             <div class="footer__container container grid">
                 <div class="footer__content">
                     <a href="#" class="footer__logo">
-                        <i class="ri-steering-line"></i> Elecar
+                        <i class="ri-steering-line"></i> TrandEra Legend
                     </a>
                     <p class="footer__description">
                         The company who can help you... <br>
-                        To find the true road pleasur, with<br>
-                        american car
+                        To find the true road pleasure and<br>
+                        make simplify your life, about car
                     </p>
                 </div>
 
@@ -467,13 +486,10 @@
                             <a href="#" class="footer__link">About</a>
                         </li>
                         <li>
-                            <a href="#" class="footer__link">Cars</a>
+                            <a href="#featured" class="footer__link">Cars</a>
                         </li>
                         <li>
                             <a href="#" class="footer__link">History</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer__link">Shop</a>
                         </li>
                     </ul>
                 </div>
@@ -484,9 +500,6 @@
                     </h3>
 
                     <ul class="footer__links">
-                        <li>
-                            <a href="#" class="footer__link">Request a quote</a>
-                        </li>
                         <li>
                             <a href="#" class="footer__link">Contact us</a>
                         </li>
@@ -502,15 +515,15 @@
                     </h3>
 
                     <ul class="footer__social">
-                        <a href="UrlFB" target="_blank" class="footer__social-link">
+                        <!--<a href="UrlFB" target="_blank" class="footer__social-link">
                             <i class="ri-facebook-fill"></i>
-                        </a>
-                        <a href="UrlIG" target="_blank" class="footer__social-link">
+                        </a>-->
+                        <a href="https://www.instagram.com/transera_legend/" target="_blank" class="footer__social-link">
                             <i class="ri-instagram-fill"></i>
                         </a>
-                        <a href="UrlTT" target="_blank" class="footer__social-link">
+                        <!--<a href="UrlTT" target="_blank" class="footer__social-link">
                             <i class="ri-twitter-fill"></i>
-                        </a>
+                        </a>-->
                     </ul>
                 </div>
             </div>

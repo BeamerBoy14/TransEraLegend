@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="{{asset('css/styleCar.css')}}">
     </head>
     <body>
+    @if(!empty($car))
         <div class="shape shape__big"></div>
         <div class="shape shape__small"></div>
         <header>
@@ -17,7 +18,7 @@
                 <img src="{{asset('img/logo5.png')}}" alt="Logo">
             </div>
         </header>
-        <div class="titleh1">Here, BMW M6 gran coupe competition</div>
+        <div class="titleh1">Here, {{ $car->Model }}</div>
         <div class="barre-blanche"></div>
         <div class="image-grid">
             <div class="main-image">
@@ -42,7 +43,7 @@
                 <div class="home__car-icon">
                     <i class="ri-temp-cold-line"></i>
                 </div>
-                <h2 class="home__car-number">408</h2>
+                <h2 class="home__car-number">{{ $car->Power }}</h2>
                 <h3 class="home__car-name">Power (CH)</h3>
             </div>
             <div class="home__car-data">
@@ -56,8 +57,8 @@
                 <div class="home__car-icon">
                     <i class="ri-flashlight-fill"></i>
                 </div>
-                <h2 class="home__car-number">433</h2>
-                <h3 class="home__car-name">autonomy (km)</h3>
+                <h2 class="home__car-number">{{ $car->FuelType }}</h2>
+                <h3 class="home__car-name">Type de Carburant</h3>
             </div>
             <div class="home__car-data">
                 <div class="home__car-icon">
@@ -68,10 +69,9 @@
             </div>
         </div>
         <div class="barre-blanche3"></div>
-        <div id="calendar"></div>
-        <button class="calend" onclick="initCalendar()">Afficher le calendrier</button> 
+    @else
+        <p>Aucune voiture n'a été trouvée.</p>
+    @endif
     </body>
-
     <script src="{{asset('js/car.js')}}"></script>
-
 </html>

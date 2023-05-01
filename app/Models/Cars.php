@@ -5,11 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Car extends Model
+class Cars extends Model
 {
+    protected $table = 'cars';
+
     use HasFactory;
 
-    public function brand(){
-        return $this->BelongTo('App\Models\Brand');
+    public static function getById($id)
+    {
+        return self::find($id);
     }
 }
