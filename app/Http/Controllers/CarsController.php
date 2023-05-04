@@ -10,7 +10,6 @@ class CarsController extends Controller
     public function list()
     {
         $cars = Cars::all();
-
         return view('cars',['Cars' => $cars]);
     }
 
