@@ -12,6 +12,7 @@
     <!--=============== FAVICON ===============-->
     <link rel="shortcut icon" href="ressources/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('dashboard/css/bootstrap.css')}}">
+    
     @yield('css')
 </head>
 <body>
