@@ -21,19 +21,3 @@ function closeZoomedImage() {
   closeButton.parentNode.removeChild(closeButton);
 }
 
-//==============================================================================================================================
-function initCalendar() {
-  var calendarEl = document.getElementById('calendar');
-
-  var calendar = new Calendar(calendarEl, {
-    plugins: [ dayGridPlugin, interactionPlugin ],
-    events: '/events',
-    selectable: true,
-    select: function(info) {
-      // code à exécuter lorsque l'utilisateur sélectionne une plage horaire sur le calendrier
-    }
-  });
-
-  calendar.render();
-}
-

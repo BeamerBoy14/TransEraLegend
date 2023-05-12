@@ -2,9 +2,19 @@
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+<link href="{{asset('dashboard/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')}}" rel="stylesheet" />
+
 @endsection
 @section('script')
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('dashboard/lib/tempusdominus/js/moment.min.js')}}"></script>
+<script src="{{asset('dashboard/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
+<script src="{{asset('dashboard/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+
 <script src="{{asset('js/car.js')}}"></script>
+<script src="{{asset('js/calendar.js')}}"></script>
 @endsection
 
 @section('content')
@@ -60,6 +70,7 @@
             <h3 class="home__car-name">autonomy (km)</h3>
         </div>
     </div>
+    <div id="calender"></div>
 </div>
 @else
     <p>Aucune voiture n'a été trouvée.</p>
