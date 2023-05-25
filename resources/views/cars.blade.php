@@ -71,6 +71,8 @@
         </div>
     </div>
     <div id="calender"></div>
+    <input type="date" id="start" name="start_date">
+    <input type="date" id="end" name="end_date">
 </div>
 @else
     <p>Aucune voiture n'a été trouvée.</p>
