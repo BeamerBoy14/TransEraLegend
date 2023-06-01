@@ -18,12 +18,4 @@ class CarsController extends Controller
         $car = Cars::find($id);
         return view('cars', compact('car'));
     }
-
-
-    /*public function getBrand($name)
-    {
-        $brand = Brand::find($name);
-
-        return view('car.show', ['brand => $brand']);
-    }*/
 }

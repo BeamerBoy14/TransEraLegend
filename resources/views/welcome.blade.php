@@ -22,22 +22,22 @@
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="#home" class="nav__link">Home</a>
+                    <a href="{{ url('/#home') }}" class="nav__link">Home</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#about" class="nav__link">About</a>
+                    <a href="{{ url('/#about') }}" class="nav__link">About</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#popular" class="nav__link">Available</a>
+                    <a href="{{ url('/#popular') }}" class="nav__link">Available</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#features" class="nav__link">Features</a>
+                    <a href="{{ url('/#features') }}" class="nav__link">Features</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#featured" class="nav__link">Featured</a>
+                    <a href="{{ url('/#featured') }}" class="nav__link">Featured</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#offer" class="nav__link">Offers</a>
+                    <a href="{{ url('/#offer') }}" class="nav__link">Offers</a>
                 </li>
                 <!--<li class="nav__item">
                     <a href="#end" class="nav__link">Bottom</a>
@@ -505,9 +505,9 @@
 
         <div class="footer__content">
             <h3 class="footer__title">
-
+                Network
             </h3>
-
+            
             <ul class="footer__social">
                 <!--<a href="UrlFB" target="_blank" class="footer__social-link">
                     <i class="ri-facebook-fill"></i>

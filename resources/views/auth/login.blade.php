@@ -1,6 +1,3 @@
-@extends('layouts.app') <!--Ceci ramene la NAV barre, sans cela il n'y a rien ?-->
-@section('content')
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -82,4 +79,3 @@
         </div>
     </body>
 </html>
-@endsection

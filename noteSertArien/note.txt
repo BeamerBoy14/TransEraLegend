@@ -83,6 +83,9 @@ layout.app.php note :
     </li>
 @endif
 
-INSERT INTO cars VALUES (1, 'Mustang', 1, 421,'Essence', 'USA car', NULL, NULL);
-INSERT INTO cars VALUES (2, 'M6 Competition', 2, 561,'Essence', 'Sport car', NULL, NULL);
-INSERT INTO cars VALUES (3,'Class S', 3 , 200 ,'Diesel', 'Luxious car', NULL, NULL)
+INSERT INTO cars VALUES (1, 'Mustang', 1, 421,'Essence', 'USA car', Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, NULL, NULL);
+INSERT INTO cars VALUES (2, 'M6 Competition', 2, 561,'Essence', 'Sport car', Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, NULL, NULL);
+INSERT INTO cars VALUES (3,'Class S', 3 , 200 ,'Diesel', 'Luxious car', Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, NULL, NULL)
+
+Npm install ensuite composer install
+git pull origin main

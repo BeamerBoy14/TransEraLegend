@@ -7,18 +7,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!--=============== FAVICON ===============-->
-    <link rel="shortcut icon" href="ressources/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="{{asset('dashboard/css/bootstrap.css')}}">
+    <title>{{ config('app.name') }}</title>
     
     @yield('css')
 </head>
 <body>
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">
+            <a href="{{ url('/') }}" class="nav__logo">
                 <i class="ri-steering-line"></i>
                 TransEra Legend
             </a>
@@ -26,22 +22,22 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="#home" class="nav__link">Home</a>
+                        <a href="{{ url('/#home') }}" class="nav__link">Home</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#about" class="nav__link">About</a>
+                        <a href="{{ url('/#about') }}" class="nav__link">About</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#popular" class="nav__link">Available</a>
+                        <a href="{{ url('/#popular') }}" class="nav__link">Available</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#features" class="nav__link">Features</a>
+                        <a href="{{ url('/#features') }}" class="nav__link">Features</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#featured" class="nav__link">Featured</a>
+                        <a href="{{ url('/#featured') }}" class="nav__link">Featured</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#offer" class="nav__link">Offers</a>
+                        <a href="{{ url('/#offer') }}" class="nav__link">Offers</a>
                     </li>
                     <!--<li class="nav__item">
                         <a href="#end" class="nav__link">Bottom</a>
