@@ -71,7 +71,7 @@
     width: 250px;
     height: 100vh;
     overflow-y: auto;
-    background: #2A2B2D;
+    background: var(--secondary);
     transition: 0.5s;
     z-index: 999;
 }
@@ -156,7 +156,7 @@
     right: 15px;
     border: none;
     content: "\f107";
-    font-family: "Font Awesome 5 Free";
+    font-family: 'Exo', sans-serif;
     font-weight: 900;
     transition: .5s;
 }
@@ -213,7 +213,7 @@
     vertical-align: middle;
     border: none;
     content: "\f107";
-    font-family: "Font Awesome 5 Free";
+    font-family: 'Exo', sans-serif;
     font-weight: 900;
     transition: .5s;
 }

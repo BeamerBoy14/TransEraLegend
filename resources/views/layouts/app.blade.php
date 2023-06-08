@@ -25,23 +25,14 @@
                         <a href="{{ url('/#home') }}" class="nav__link">Home</a>
                     </li>
                     <li class="nav__item">
-                        <a href="{{ url('/#about') }}" class="nav__link">About</a>
-                    </li>
-                    <li class="nav__item">
                         <a href="{{ url('/#popular') }}" class="nav__link">Available</a>
                     </li>
                     <li class="nav__item">
-                        <a href="{{ url('/#features') }}" class="nav__link">Features</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="{{ url('/#featured') }}" class="nav__link">Featured</a>
+                        <a href="{{ url('/#featured') }}" class="nav__link">All fleet</a>
                     </li>
                     <li class="nav__item">
                         <a href="{{ url('/#offer') }}" class="nav__link">Offers</a>
                     </li>
-                    <!--<li class="nav__item">
-                        <a href="#end" class="nav__link">Bottom</a>
-                    </li>-->
                     @if(Auth::check())
                         <li class="nav__item">
                             <a href="{{ route('home') }}" class="nav__link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre> 

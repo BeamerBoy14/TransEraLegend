@@ -15,4 +15,20 @@ class Cars extends Model
     {
         return self::find($id);
     }
+
+    public static function getAllCars()
+    {
+        return self::all();
+    }
+
+    public function brandName()
+    {
+        return Brand::getBrandNameById($this->brand_id);
+    }
+
+    public static function getLatestCar()
+    {
+        return self::latest('created_at')->first();
+    }
+
 }

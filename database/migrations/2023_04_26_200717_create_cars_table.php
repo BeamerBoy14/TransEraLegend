@@ -20,7 +20,13 @@ class CreateCarsTable extends Migration
             $table->integer('power');
             $table->string('fuelType');
             $table->string('feature');
+            $table->integer('price')->nullable();
             $table->string('description')->nullable();
+            $table->string('imgFace')->nullable();
+            $table->string('imgSemiSide')->nullable();
+            $table->string('imgInt')->nullable();
+            $table->string('imgExt')->nullable();
+            $table->string('imgExtSec')->nullable();
             $table->timestamps();
         });
     }

@@ -9,7 +9,16 @@
 <link rel="stylesheet" href="{{asset('css/styles.css')}}">
 @endsection
 
-
+@section('script')
+<!--=============== SCROLL REVEAL ===============-->
+<script src="{{asset('js/scrollreveal.min.js')}}"></script>
+<!--=============== SWIPER JS ===============-->
+<script src="{{asset('js/swiper-bundle.min.js')}}"></script>
+<!--=============== MIXITUP JS ===============-->
+<script src="{{asset('js/mixitup.min.js')}}"></script>
+<!--=============== MAIN JS ===============-->
+<script src="{{asset('js/main.js')}}"></script>
+@endsection
 
 @section('content')
 @if(!empty($car))  
@@ -30,28 +39,20 @@
             <div class="popular__container container swiper">
                 <div class="swiper-wrapper">
                     <article class="popular__card2 swiper-slide">
-                        <img src="{{asset('img/b4.jpg')}}" alt="" class="popular__img2">
+                        <img src="{{asset('img/'. $car->imgExt )}}" alt="" class="popular__img2">
                     </article>
     
                     <article class="popular__card2 swiper-slide">
-                        <img src="{{asset('img/b1.jpg')}}" alt="" class="popular__img2">
+                        <img src="{{asset('img/'. $car->imgExtSec )}}" alt="" class="popular__img2">
                     </article>
     
                     <article class="popular__card2 swiper-slide">
-                        <img src="{{asset('img/b2.jpg')}}" alt="" class="popular__img2">
-                    </article>
-    
-                    <article class="popular__card2 swiper-slide">
-                        <img src="{{asset('img/b3.jpg')}}" alt="" class="popular__img2">
-                    </article>
-    
-                    <article class="popular__card2 swiper-slide">
-                        <img src="{{asset('img/b5.jpg')}}" alt="" class="popular__img2">
+                        <img src="{{asset('img/'. $car->imgInt )}}" alt="" class="popular__img2">
                     </article>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-            <img src="{{asset('img/offer.png')}}" alt="" class="offer__img">
+            <img src="{{asset('img/'. $car->imgSemiSide )}}"" alt="" class="offer__img">
         </div>
     </section>
 
@@ -59,7 +60,7 @@
     <section class="features section" id="features">
         <div class="about__container container grid">
             <div class="about__group">
-                <img src="{{asset('img/about.png')}}" alt"" class="about__img">
+                <img src="{{asset('img/'. $car->imgInt )}}" alt"" class="about__img">
 
                 <div class="about__card">
                     <h3 class="about__card-title">Focus On</h3>
@@ -77,6 +78,11 @@
                 <p class="about__description">
                     {{ $car->description }}
                 </p>
+                @if(Auth::check())
+                    <a href="{{ url('/reservation') }}" class="button">My reservation</a>
+                @else
+                    <a href="{{ route('home') }}" class="button">Connexion</a>
+                @endif
             </div>
         </div>
     </section>
@@ -308,15 +314,4 @@
         </a>
     </footer>
 @endif
-@endsection
-
-@section('script')
-<!--=============== SCROLL REVEAL ===============-->
-<script src="{{asset('js/scrollreveal.min.js')}}"></script>
-<!--=============== SWIPER JS ===============-->
-<script src="{{asset('js/swiper-bundle.min.js')}}"></script>
-<!--=============== MIXITUP JS ===============-->
-<script src="{{asset('js/mixitup.min.js')}}"></script>
-<!--=============== MAIN JS ===============-->
-<script src="{{asset('js/main.js')}}"></script>
 @endsection

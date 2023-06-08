@@ -83,9 +83,30 @@ layout.app.php note :
     </li>
 @endif
 
-INSERT INTO cars VALUES (1, 'Mustang', 1, 421,'Essence', 'USA car', Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, NULL, NULL);
-INSERT INTO cars VALUES (2, 'M6 Competition', 2, 561,'Essence', 'Sport car', Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, NULL, NULL);
-INSERT INTO cars VALUES (3,'Class S', 3 , 200 ,'Diesel', 'Luxious car', Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, NULL, NULL)
+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
+
+INSERT INTO cars VALUES (1, 'Mustang', 1, 421,'Essence', 'USA car', 250, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget 
+dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, 
+pretium quis', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+INSERT INTO cars VALUES (2, 'M6 Competition', 2, 561,'Essence', 'Sport car', 300, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget 
+dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium 
+quis', NULL, 'carImg/m66.png', 'carImg/m63.png', 'carImg/m64.png', 'carImg/m65.png', NULL, NULL);
+
+INSERT INTO cars VALUES (4, 'C8', 4, 451,'Essence', 'USA car', 300, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean 
+massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis', NULL, 
+NULL, NULL, NULL, NULL, NULL, NULL);
+
+INSERT INTO cars VALUES (5, 'SUPRA MK4', 5, 281,'Essence', 'tunning car', 200, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget 
+dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium 
+quis', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+INSERT INTO brands (name, imglogowhite) VALUES
+  ('ford', 'brandImg/logof.png'),
+  ('bmw', 'brandImg/logo5.png'),
+  ('mercedes', 'brandImg/logom.png'),
+  ('corvette', 'brandImg/logoc.png'),
+  ('toyota', 'brandImg/logot.png');
 
 Npm install ensuite composer install
 git pull origin main

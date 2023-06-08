@@ -1,5 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Models\Brand;
+use App\Models\Cars;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,12 +19,17 @@ use Illuminate\Support\Facades\Route;
 Route::view('main','main');
 Route::view('connect','connect');
 Route::view('add','add');
-Route::view('homee','homee');
+Route::view('profil','profil');
+Route::view('reservation','reservation');
+Route::view('contest','contest');
 //--------------------------------------------------------------------------
 //********************************GET************************************** 
 //--------------------------------------------------------------------------
 Route::get('/', function () {
-    return view('welcome');
+    $brands = Brand::getAllBrands();
+    $cars = Cars::getAllCars();
+    $latestCar = Cars::getLatestCar();
+    return view('welcome', compact('brands','cars','latestCar'));
 });
 
 Route::get('/cars/{id}', [App\Http\Controllers\CarsController::class, 'show'])->name('CarsController@show');
