@@ -7,15 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Brand extends Model
 {
-    protected $table = 'brands';
+    protected $table = 'brand';
     use HasFactory;
 
-    public function getAllBrands() {
+    public function getAllBrands() 
+    {
         $brands = Brand::all();
         return $brands;
     }
 
-    public static function getBrandNameById($id) {
+    public static function getBrandNameById($id) 
+    {
         $brand = Brand::find($id);
 
         if ($brand) {

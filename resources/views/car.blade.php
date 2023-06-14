@@ -89,43 +89,79 @@
 
     <!--==================== FEATURED ====================-->
     <section class="featured section" id="featured">
-            <div class="featured__content grid">
-                <div class="home__car">
-                    <div class="home__car-data">
-                        <div class="home__car-icon">
-                            <i class="ri-temp-cold-line"></i>
-                        </div>
-                        <h2 class="home__car-number">{{ $car->power }}</h2>
-                        <h3 class="home__car-name">Power (CH)</h3>
+        <div class="featured__content grid">
+            <div class="home__car">
+                <div class="home__car-data">
+                    <div class="home__car-icon">
+                        <i class="ri-temp-cold-line"></i>
                     </div>
-                    <div class="home__car-data">
-                        <div class="home__car-icon">
-                            <i class="ri-dashboard-3-line"></i>
-                        </div>
-                        <h2 class="home__car-number">345</h2>
-                        <h3 class="home__car-name">Torque (Nm)</h3>
+                    <h2 class="home__car-number">{{ $car->power }}</h2>
+                    <h3 class="home__car-name">Power (CH)</h3>
+                </div>
+                <div class="home__car-data">
+                    <div class="home__car-icon">
+                        <i class="ri-dashboard-3-line"></i>
                     </div>
-                    <div class="home__car-data">
-                        <div class="home__car-icon">
-                            <i class="ri-flashlight-fill"></i>
-                        </div>
-                        <h2 class="home__car-number">{{ $car->fuelType }}</h2>
-                        <h3 class="home__car-name">Type de Carburant</h3>
+                    <h2 class="home__car-number">345</h2>
+                    <h3 class="home__car-name">Torque (Nm)</h3>
+                </div>
+                <div class="home__car-data">
+                    <div class="home__car-icon">
+                        <i class="ri-flashlight-fill"></i>
                     </div>
-                    <div class="home__car-data">
-                        <div class="home__car-icon">
-                            <i class="ri-flashlight-fill"></i>
-                        </div>
-                        <h2 class="home__car-number">433</h2>
-                        <h3 class="home__car-name">autonomy (km)</h3>
+                    <h2 class="home__car-number">{{ $car->fuelType }}</h2>
+                    <h3 class="home__car-name">Type de Carburant</h3>
+                </div>
+                <div class="home__car-data">
+                    <div class="home__car-icon">
+                        <i class="ri-flashlight-fill"></i>
                     </div>
+                    <h2 class="home__car-number">433</h2>
+                    <h3 class="home__car-name">autonomy (km)</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    @if(Auth::check())  
+    <!--==================== FEATURED ====================-->
+    <section class="featured section" id="featured">
+        <div class="featured__content grid">
+            <div class="home__car">
+                <div class="home__car-data">
+                    <div class="home__car-icon">
+                        <i class="ri-number-1"></i>
+                    </div>
+                    <h2 class="home__car-number">{{ $car->price }}€</h2>
+                    <h3 class="home__car-name">per day</h3>
+                </div>
+                <div class="home__car-data">
+                    <div class="home__car-icon">
+                        <i class="ri-number-3"></i>
+                    </div>
+                    <h2 class="home__car-number">{{ $car->priceWeekEnd }}€</h2>
+                    <h3 class="home__car-name">Friday to monday</h3>
+                </div>
+                <div class="home__car-data">
+                    <div class="home__car-icon">
+                        <i class="ri-number-7"></i>
+                    </div>
+                    <h2 class="home__car-number">{{ $car->priceWeek }}€</h2>
+                    <h3 class="home__car-name">per week</h3>
+                </div>
+                <div class="home__car-data">
+                    <div class="home__car-icon">
+                        <i class="ri-number-3"></i><i class="ri-number-0"></i>
+                    </div>
+                    <h2 class="home__car-number">{{ $car->priceMonth }}€</h2>
+                    <h3 class="home__car-name">per month</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
     <!--==================== ABOUT ====================-->
+    @if(Auth::check())  
     <section class="about section" id="about">
         <div id="calender"></div>
         <input type="date" id="start" name="start_date">
@@ -155,9 +191,9 @@
                 <i class="ri-steering-line"></i> TrandEra Legend
             </a>
             <p class="footer__description">
-                The company who can help you... <br>
-                To find the true road pleasure and<br>
-                make simplify your life, about car
+                Unleash the extraordinary with our exotic car rentals. Dive into 
+                elegance, power, and exhilaration behind the wheel for 
+                unforgettable moments.
             </p>
         </div>
 
@@ -248,9 +284,9 @@
                     <i class="ri-steering-line"></i> TrandEra Legend
                 </a>
                 <p class="footer__description">
-                    The company who can help you... <br>
-                    To find the true road pleasure and<br>
-                    make simplify your life, about car
+                    Unleash the extraordinary with our exotic car rentals. Dive into 
+                    elegance, power, and exhilaration behind the wheel for 
+                    unforgettable moments.
                 </p>
             </div>
     

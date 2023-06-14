@@ -66,7 +66,7 @@
                     <a href="{{ url('/profil') }}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>My Profile</a>
                     <a href="{{ url('/reservation') }}" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>My Reservation</a>
                     <a href="{{ url('/contact') }}" class="nav-item nav-link"><i class="fa fa-quote-right me-2"></i>Contact Us</a>
-                    <a href="{{ url('/') }}" class="nav-item nav-link"><i class="fa fa-fast-backward me-2"></i>Back</a>
+                    <a href="{{ url('/') }}" class="nav-item nav-link"><i class="fa fa-fast-backward me-2"></i>Home</a>
                 </div>
             </nav>
         </div>
@@ -83,65 +83,6 @@
                     <i class="fa fa-bars"></i>
                 </a>
                 <div class="navbar-nav align-items-center ms-auto">
-                    <div class="nav-item dropdown">
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="{{asset('img/logo5.png')}}" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="{{asset('img/logo5.png')}}" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="{{asset('img/logo5.png')}}" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all message</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notification</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Profile updated</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">New user added</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Password changed</h6>
-                                <small>15 minutes ago</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all notifications</a>
-                        </div>
-                    </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="{{asset('img/user.png')}}" alt="" style="width: 40px; height: 40px;">
@@ -163,34 +104,40 @@
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Description List</h6>
+                            <h6 class="mb-4">User information</h6>
                             <dl class="row mb-0">
-                                <dt class="col-sm-4">Description lists</dt>
-                                <dd class="col-sm-8">A description list is perfect for defining terms.</dd>
+                                <dt class="col-sm-4">Name</dt>
+                                <dd class="col-sm-8">{{ Auth::user()->name }}</dd>
 
-                                <dt class="col-sm-4">Term</dt>
-                                <dd class="col-sm-8">Definition for the term.</dd>
+                                <dt class="col-sm-4">E-mail</dt>
+                                <dd class="col-sm-8">{{ Auth::user()->email }}</dd>
 
-                                <dt class="col-sm-4">Another term</dt>
-                                <dd class="col-sm-8">This definition is short, so no extra paragraphs or anything.</dd>
-
-                                <dt class="col-sm-4 text-truncate">Truncated term is truncated</dt>
-                                <dd class="col-sm-8">This can be useful when space is tight. Adds an ellipsis at the
-                                    end.</dd>
-
-                                <dt class="col-sm-4">Nesting</dt>
-                                <dd class="col-sm-8">
-                                    <dl class="row">
-                                        <dt class="col-sm-4">Nested list</dt>
-                                        <dd class="col-sm-8">Nested definition list.</dd>
-                                    </dl>
-                                </dd>
+                                <dt class="col-sm-4">Member since</dt>
+                                <dd class="col-sm-8">{{ Auth::user()->created_at }}</dd>
                             </dl>
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-secondary text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
+                                <div class="owl-carousel testimonial-carousel">
+                                    <div class="testimonial-item text-center">
+                                        <img class="img-fluid rounded-circle mx-auto mb-4" src={{asset('img/concour.png')}} style="width: 100px; height: 100px;">
+                                        <h5 class="mb-1">Contest</h5>
+                                        <p>Each month</p>
+                                        <p class="mb-0">You can take advantage of the contest to enjoy the luxury offered by our agency for FREE</p>
+                                        <a href="{{ url('/contest') }}">Know more...</a>
+                                    </div>
+                                    @foreach($actuPromo as $promotion)
+                                        <div class="testimonial-item text-center">
+                                            <img class="img-fluid rounded-circle mx-auto mb-4" src="{{ asset('img/discount.png') }}" style="width: 100px; height: 100px;">
+                                            <h5 class="mb-1">Promotion available today !</h5>
+                                            <p>{{ $promotion->name }}</p>
+                                            <p class="mb-0">come and take advantage of this promotion on our car of our selection which did not last forever, it started {{ $promotion->startDate }} until {{ $promotion->endDate }}.</p>
+                                            <a href="{{ url('/contest') }}">Know more...</a>
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -201,7 +148,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-secondary text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Calender</h6>
+                                <h6 class="mb-0">My location calendar</h6>
                                 <a href="">Show All</a>
                             </div>
                             <div id="calender"></div>
@@ -210,6 +157,17 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-secondary text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
+                                <div class="owl-carousel testimonial-carousel">
+                                    @foreach ($availableCars as $car)
+                                    <div class="testimonial-item text-center">
+                                        <img class="img-fluid rounded-circle mx-auto mb-4" src="{{ asset('img/'. $car->imgSemiSide) }}" style="width: 125px; height: 100px;">
+                                        <h5 class="mb-1">{{ $car->brand }}</h5>
+                                        <p>{{ $car->model }}</p>
+                                        <p class="mb-0">{{ $car->feature }}</p>
+                                        <a href="{{ url('/car/' . $car->id)}}">Rent Now !</a>
+                                    </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cars;
+use App\Models\Car;
 
-class CarsController extends Controller
+class CarController extends Controller
 {
     public function list()
     {
-        $cars = Cars::all();
+        $cars = Car::all();
         return view('cars',['Cars' => $cars]);
     }
 
     public function show($id)
     {
-        $car = Cars::find($id);
-        return view('cars', compact('car'));
+        $car = Car::find($id);
+        return view('car', compact('car'));
     }
 }

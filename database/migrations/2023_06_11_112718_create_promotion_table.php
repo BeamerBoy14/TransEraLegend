@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Participation extends Migration
+class CreatePromotionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class Participation extends Migration
      */
     public function up()
     {
-        Schema::create('participation', function (Blueprint $table) {
+        Schema::create('promotion', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->nullable();
-            $table->integer('contest_id')->nullable();
+            $table->string('name');
+            $table->date('startDate');
+            $table->date('endDate');
+            $table->integer('pourcentage');
+            $table->integer('car_id')->nullable();
         });
     }
 
@@ -27,6 +30,6 @@ class Participation extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('participation');
+        Schema::dropIfExists('promotion');
     }
 }

@@ -36,7 +36,7 @@
                     {{ $latestCar->model }}
                 </h2>
                 <h3 class="home__elec">
-                    <i class="ri-flashlight-fill"></i> Car
+                    <i class="ri-roadster-line"></i> {{ $latestCar->feature }}
                 </h3>
             </div>
 
@@ -59,7 +59,7 @@
                 </div>
                 <div class="home__car-data">
                     <div class="home__car-icon">
-                        <i class="ri-flashlight-fill"></i>
+                        <i class="ri-money-euro-circle-line"></i>
                     </div>
                     <h2 class="home__car-number">{{ $latestCar->price }}</h2>
                     <h3 class="home__car-name">price per day</h3>
@@ -74,118 +74,32 @@
         <h2 class="section__title">
             Car available now <br> in the fleet
         </h2>
-
-        <div class="popular__container container swiper">
-            <div class="swiper-wrapper">
-                <article class="popular__card swiper-slide">
-                    <div class="shape shape__smaller"></div>
-                    <h1 class="popular__title">Porsche</h1>
-                    <h3 class="popular__subtitle">Turbo S</h3>
-
-                    <img src="{{asset('img/popular1.png')}}" alt="" class="popular__img">
-
-                    <div class="popular__data">
-                        <div class="popular__data-group">
-                            <i class="ri-dashboard-3-line"></i> 3.7 sec
-                        </div>
-                        <div class="popular__data-group">
-                            <i class="ri-funds-box-line"></i> 356 Km/h
-                        </div>
-                        <div class="popular__data-group">
-                            <i class="ri-charging-pile-2-line"></i> Electronic
-                        </div>
-                    </div>
-
-                    <h3 class="popular__price">$ 175,900</h3>
-                </article>
-
-                <article class="popular__card swiper-slide">
-                    <div class="shape shape__smaller"></div>
-                    <h1 class="popular__title">Porsche</h1>
-                    <h3 class="popular__subtitle">Taycan</h3>
-
-                    <img src="{{asset('img/popular2.png')}}" alt="" class="popular__img">
-
-                    <div class="popular__data">
-                        <div class="popular__data-group">
-                            <i class="ri-dashboard-3-line"></i> 3.7 sec
-                        </div>
-                        <div class="popular__data-group">
-                            <i class="ri-funds-box-line"></i> 356 Km/h
-                        </div>
-                        <div class="popular__data-group">
-                            <i class="ri-charging-pile-2-line"></i> Electronic
-                        </div>
-                    </div>
-
-                    <h3 class="popular__price">$ 114,900</h3>
-                </article>
-
-                <article class="popular__card swiper-slide">
-                    <div class="shape shape__smaller"></div>
-                    <h1 class="popular__title">Porsche</h1>
-                    <h3 class="popular__subtitle">Turbo S Cross</h3>
-
-                    <img src="{{asset('img/popular3.png')}}" alt="" class="popular__img">
-
-                    <div class="popular__data">
-                        <div class="popular__data-group">
-                            <i class="ri-dashboard-3-line"></i> 3.7 sec
-                        </div>
-                        <div class="popular__data-group">
-                            <i class="ri-funds-box-line"></i> 356 Km/h
-                        </div>
-                        <div class="popular__data-group">
-                            <i class="ri-charging-pile-2-line"></i> Electronic
-                        </div>
-                    </div>
-
-                    <h3 class="popular__price">$ 150,900</h3>
-                </article>
-
-                <article class="popular__card swiper-slide">
-                    <div class="shape shape__smaller"></div>
-                    <h1 class="popular__title">Porsche</h1>
-                    <h3 class="popular__subtitle">Boxster 718</h3>
-
-                    <img src="{{asset('img/popular4.png')}}" alt="" class="popular__img">
-
-                    <div class="popular__data">
-                        <div class="popular__data-group">
-                            <i class="ri-dashboard-3-line"></i> 3.7 sec
-                        </div>
-                        <div class="popular__data-group">
-                            <i class="ri-funds-box-line"></i> 356 Km/h
-                        </div>
-                        <div class="popular__data-group">
-                            <i class="ri-charging-pile-2-line"></i> Electronic
-                        </div>
-                    </div>
-
-                    <h3 class="popular__price">$125,900</h3>
-                </article>
-
-                <article class="popular__card swiper-slide">
-                    <div class="shape shape__smaller"></div>
-                    <h1 class="popular__title">Porsche</h1>
-                    <h3 class="popular__subtitle">Cayman</h3>
-
-                    <img src="{{asset('img/popular5.png')}}" alt="" class="popular__img">
-
-                    <div class="popular__data">
-                        <div class="popular__data-group">
-                            <i class="ri-dashboard-3-line"></i> 3.7 sec
-                        </div>
-                        <div class="popular__data-group">
-                            <i class="ri-funds-box-line"></i> 356 Km/h
-                        </div>
-                        <div class="popular__data-group">
-                            <i class="ri-charging-pile-2-line"></i> Electronic
-                        </div>
-                    </div>
-
-                    <h3 class="popular__price">$128,900</h3>
-                </article>
+            <div class="popular__container container swiper">
+                <div class="swiper-wrapper">
+                    @foreach ($availableCars as $car)
+                        <article class="popular__card swiper-slide">
+                            <div class="shape shape__smaller"></div>
+                            <h1 class="popular__title">{{ $car->brandName() }}</h1>
+                            <h3 class="popular__subtitle">{{ $car->model }}</h3>
+        
+                            <img src="{{ asset('img/'. $car->imgSemiSide) }}" alt="" class="popular__img">
+        
+                            <div class="popular__data">
+                                <div class="popular__data-group">
+                                    <i class="ri-dashboard-3-line"></i> {{ $car->acceleration }}
+                                </div>
+                                <div class="popular__data-group">
+                                    <i class="ri-funds-box-line"></i> {{ $car->topSpeed }}
+                                </div>
+                                <div class="popular__data-group">
+                                    <i class="ri-charging-pile-2-line"></i> {{ $car->fuelType }}
+                                </div>
+                            </div>
+        
+                            <h3 class="popular__price">{{ $car->price }}€ / day</h3>
+                        </article>
+                    @endforeach
+                </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -220,7 +134,7 @@
                     <div class="shape shape__smaller"></div>
                     <h1 class="featured__title">{{ $car->brandName() }}</h1>
                     <h3 class="featured__subtitle">{{ $car->model }}</h3>
-                    <a href="{{ url('/cars/' . $car->id)}}"><img src="{{asset('img/'. $car->imgSemiSide )}}" alt="" class="featured__img"></a>
+                    <a href="{{ url('/car/' . $car->id)}}"><img src="{{ asset('img/'. $car->imgSemiSide ) }}" alt="" class="featured__img"></a>
                     <h3 class="featured__price">{{ $car->price }}€ / day</h3>
                     </article>
                 @endforeach

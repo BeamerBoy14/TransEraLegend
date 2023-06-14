@@ -1,7 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Models\Promotion;
 use App\Models\Brand;
-use App\Models\Cars;
+use App\Models\Car;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,16 +28,21 @@ Route::view('contest','contest');
 //--------------------------------------------------------------------------
 Route::get('/', function () {
     $brands = Brand::getAllBrands();
-    $cars = Cars::getAllCars();
-    $latestCar = Cars::getLatestCar();
-    return view('welcome', compact('brands','cars','latestCar'));
+    $cars = Car::getAllCars();
+    $latestCar = Car::getLatestCar();
+    $availableCars = Car::getAvailableCarsForTomorrow();
+    return view('welcome', compact('brands','cars','latestCar','availableCars'));
 });
 
-Route::get('/cars/{id}', [App\Http\Controllers\CarsController::class, 'show'])->name('CarsController@show');
-Route::get('/test',[App\Http\Controllers\BrandsController::class, 'list'])->name('BrandsController@list');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/events', [App\Http\Controllers\EventController::class, 'index']);
+Route::get('/home', function () {
+    $availableCars = Car::getAvailableCarsForTomorrow();
+    $actuPromo = Promotion::getPromotionsByDate();
+    return view('home', compact('availableCars', 'actuPromo'));
+})->name('home');
 
+Route::get('/events', [App\Http\Controllers\EventController::class, 'index']);
+Route::get('/car/{id}', [App\Http\Controllers\CarController::class, 'show'])->name('CarController@show');
+Route::get('/test',[App\Http\Controllers\BrandController::class, 'list'])->name('BrandController@list');
 
 Route::get('/logout', function () {
     Auth::logout();
