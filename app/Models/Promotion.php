@@ -15,7 +15,7 @@ class Promotion extends Model
         return self::latest('date')->first();
     }
 
-    function getPromotionsByDate()
+    public static function  getPromotionsByDate()
     {
         $today = Carbon::today();
 
