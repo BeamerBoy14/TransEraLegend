@@ -10,7 +10,7 @@ class Brand extends Model
     protected $table = 'brand';
     use HasFactory;
 
-    public function getAllBrands() 
+    public static function getAllBrands() 
     {
         $brands = Brand::all();
         return $brands;
