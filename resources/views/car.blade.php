@@ -47,7 +47,11 @@
                     </article>
     
                     <article class="popular__card2 swiper-slide">
-                        <img src="{{asset('img/'. $car->imgInt )}}" alt="" class="popular__img2">
+                        <img src="{{asset('img/'. $car->imgIntSec )}}" alt="" class="popular__img2">
+                    </article>
+
+                    <article class="popular__card2 swiper-slide">
+                        <img src="{{asset('img/'. $car->imgExtThi )}}" alt="" class="popular__img2">
                     </article>
                 </div>
                 <div class="swiper-pagination"></div>

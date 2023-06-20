@@ -5,23 +5,24 @@ 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
 
 INSERT INTO car VALUES (1, 'Mustang', 1, 421,'Essence', 'USA car', 1, 329, 250, 250, 250, 250, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget 
 dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, 
-pretium quis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-06-01 00:00:00', NULL);
+pretium quis', carImg/mustang1.jpg, carImg/mustang2.jpg, carImg/mustang3.jpg, carImg/mustang4.jpg, carImg/mustang5.jpg, carImg/mustang6.jpg, carImg/mustang7.jpg, '2023-06-01 00:00:00', NULL);
 
-INSERT INTO car VALUES (2, 'M6 Competition', 2, 561,'Essence', 'Sport car', 1, 329, 300, 750, 1200, 2000, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget 
-dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium 
-quis', NULL, 'carImg/m66.png', 'carImg/m63.jpg', 'carImg/m61.jpg', 'carImg/m64.jpg', 'carImg/m65.jpg', 'carImg/m62.jpg', '2023-06-02 00:00:00', NULL);
+INSERT INTO car VALUES (2, 'M6 Competition', 2, 561,'Essence', 'Sport car', 1, 329, 300, 750, 1200, 2000, 'Experience the incredible BMW M6 F13, a perfect blend of power and 
+beauty. Its roaring V8 twin-turbo engine propels you into thrilling sensations, while its bold design and elegant lines captivate every onlooker. With world-class performance 
+and advanced technology, the BMW M6 F13 offers an unmatched driving experience. Get ready to push the boundaries of excitement behind the wheel of this road beast.', 
+NULL, 'carImg/m66.png', 'carImg/m63.jpg', 'carImg/m61.jpg', 'carImg/m64.jpg', 'carImg/m65.jpg', 'carImg/m62.jpg', '2023-06-02 00:00:00', NULL);
 
 INSERT INTO car VALUES (3,'Class S', 3 , 200 , 'Diesel', 'Luxious car', 1, 329, 150, 150, 150, 150, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget 
 dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, 
-pretium quis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-06-03 00:00:00', NULL);
+pretium quis', carImg/classes1.jpg, carImg/classes2.jpg, carImg/classes3.jpg, carImg/classes4.jpg, carImg/classes5.jpg, carImg/classes6.jpg, carImg/classes7.jpg, '2023-06-03 00:00:00', NULL);
 
 INSERT INTO car VALUES (4, 'C8', 4, 451,'Essence', 'USA car', 1, 329, 300, 300, 300, 300, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean 
-massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis', NULL, 
-NULL, NULL, NULL, NULL, NULL, NULL, '2023-06-04 00:00:00', NULL);
+massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis', carImg/c81.jpg, 
+carImg/c82.jpg, carImg/c83.jpg, carImg/c84.jpg, carImg/c85.jpg, carImg/c86.jpg, carImg/c87.jpg, '2023-06-04 00:00:00', NULL);
 
 INSERT INTO car VALUES (5, 'SUPRA MK4', 5, 281,'Essence', 'tunning car', 1, 329, 200, 200, 200, 200, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget 
 dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium 
-quis', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-06-05 00:00:00', NULL);
+quis', carImg/supramk41.jpg, carImg/supramk42.jpg, carImg/supramk43.jpg, carImg/supramk44.jpg, carImg/supramk45.jpg, carImg/supramk46.jpg, carImg/supramk47.jpg, '2023-06-05 00:00:00', NULL);
 
 INSERT INTO brand (name, imglogowhite) VALUES
   ('ford', 'brandImg/logof.png'),

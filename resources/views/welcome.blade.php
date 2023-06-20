@@ -82,7 +82,7 @@
                             <h1 class="popular__title">{{ $car->brandName() }}</h1>
                             <h3 class="popular__subtitle">{{ $car->model }}</h3>
         
-                            <img src="{{ asset('img/'. $car->imgSemiSide) }}" alt="" class="popular__img">
+                            <a href="{{ url('/car/' . $car->id)}}"><img src="{{ asset('img/'. $car->imgSemiSide) }}" alt="" class="popular__img"></a>
         
                             <div class="popular__data">
                                 <div class="popular__data-group">
