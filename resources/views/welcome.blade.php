@@ -40,12 +40,12 @@
                 </h3>
             </div>
 
-            <img src="{{asset('img/home.png')}}" alt="" class="home__img">
+            <img src="{{ asset('img/'. $latestCar->imgFace ) }}" alt="" class="home__img">
 
             <div class="home__car">
                 <div class="home__car-data">
                     <div class="home__car-icon">
-                        <i class="ri-temp-cold-line"></i>
+                        <i class="ri-rocket-2-line"></i>
                     </div>
                     <h2 class="home__car-number">{{ $latestCar->power }}</h2>
                     <h3 class="home__car-name">Power (CH)</h3>
@@ -54,8 +54,8 @@
                     <div class="home__car-icon">
                         <i class="ri-dashboard-3-line"></i>
                     </div>
-                    <h2 class="home__car-number">345</h2>
-                    <h3 class="home__car-name">Torque (Nm)</h3>
+                    <h2 class="home__car-number">{{ $latestCar->acceleration }} s</h2>
+                    <h3 class="home__car-name">acceleration (0 to 100)</h3>
                 </div>
                 <div class="home__car-data">
                     <div class="home__car-icon">
@@ -167,7 +167,7 @@
                     products, contest and new cars by email by subcribing to our 
                     mailing list.
                 </p>
-                <a href="{{ url('/contest') }}" class="button">
+                <a href="{{ url('/construct') }}" class="button">
                     Information
                 </a>
             </div>
@@ -195,7 +195,7 @@
 
     <div class="footer__container container grid">
         <div class="footer__content">
-            <a href="#" class="footer__logo">
+            <a href="{{ url('/') }}" class="footer__logo">
                 <i class="ri-steering-line"></i> TrandEra Legend
             </a>
             <p class="footer__description">
@@ -212,13 +212,13 @@
 
             <ul class="footer__links">
                 <li>
-                    <a href="#" class="footer__link">About</a>
+                    <a href="{{ url('/construct') }}" class="footer__link">About</a>
                 </li>
                 <li>
                     <a href="#featured" class="footer__link">Cars</a>
                 </li>
                 <li>
-                    <a href="#" class="footer__link">History</a>
+                    <a href="{{ url('/construct') }}" class="footer__link">History</a>
                 </li>
             </ul>
         </div>
@@ -230,10 +230,10 @@
 
             <ul class="footer__links">
                 <li>
-                    <a href="#" class="footer__link">Contact us</a>
+                    <a href="{{ url('/construct') }}" class="footer__link">Contact us</a>
                 </li>
                 <li>
-                    <a href="#" class="footer__link">Services</a>
+                    <a href="{{ url('/construct') }}" class="footer__link">Services</a>
                 </li>
             </ul>
         </div>

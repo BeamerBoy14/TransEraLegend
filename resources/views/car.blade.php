@@ -76,17 +76,12 @@
 
             <div class="about__data">
                 <h2 class="section__title about__title">
-                    Powerful Car with <br> Luxury Options
+                    More information <br> About this car
                 </h2>
 
                 <p class="about__description">
                     {{ $car->description }}
                 </p>
-                @if(Auth::check())
-                    <a href="{{ url('/reservation') }}" class="button">My reservation</a>
-                @else
-                    <a href="{{ route('home') }}" class="button">Connexion</a>
-                @endif
             </div>
         </div>
     </section>
@@ -164,7 +159,7 @@
     </section>
 
     
-    <!--==================== ABOUT ====================-->
+    <!--==================== ABOUT ====================
     @if(Auth::check())  
     <section class="about section" id="about">
         <div id="calender"></div>
@@ -182,7 +177,7 @@
             </div>
         </div>
     </section>
-    @endif
+    @endif-->
 </main>
 
 <!--==================== FOOTER ====================-->

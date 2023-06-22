@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Promotion;
 use App\Models\Brand;
 use App\Models\Car;
+use App\Models\Reservation;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,15 +18,19 @@ use App\Models\Car;
 //--------------------------------------------------------------------------
 //********************************VIEW************************************** 
 //--------------------------------------------------------------------------
+
 Route::view('main','main');
 Route::view('connect','connect');
 Route::view('add','add');
 Route::view('profil','profil');
 Route::view('reservation','reservation');
 Route::view('contest','contest');
+Route::view('construct','construct');
+
 //--------------------------------------------------------------------------
 //********************************GET************************************** 
 //--------------------------------------------------------------------------
+
 Route::get('/', function () {
     $brands = Brand::getAllBrands();
     $cars = Car::getAllCars();
@@ -33,6 +38,13 @@ Route::get('/', function () {
     $availableCars = Car::getAvailableCarsForTomorrow();
     return view('welcome', compact('brands','cars','latestCar','availableCars'));
 });
+
+Route::get('/reservation', function (){
+    $user = Auth::user();
+    $cars = Car::getAllCars();
+    $reservations = Reservation::getUserReservations($user->id);
+    return view('reservation', compact('cars','reservations'));
+})->name('reservation');
 
 Route::get('/home', function () {
     $availableCars = Car::getAvailableCarsForTomorrow();
@@ -48,8 +60,10 @@ Route::get('/logout', function () {
     Auth::logout();
     return redirect('/login');
 })->name('logout');
+
 //--------------------------------------------------------------------------
 //********************************OTHER************************************* 
 //--------------------------------------------------------------------------
+
 Auth::routes();
 

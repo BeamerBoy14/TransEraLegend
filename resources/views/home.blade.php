@@ -63,9 +63,9 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="{{ url('/profil') }}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>My Profile</a>
-                    <a href="{{ url('/reservation') }}" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>My Reservation</a>
-                    <a href="{{ url('/contact') }}" class="nav-item nav-link"><i class="fa fa-quote-right me-2"></i>Contact Us</a>
+                    <a href="{{ url('/construct') }}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>My Profile</a>
+                    <a href="{{ url('/construct') }}" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>My Reservation</a>
+                    <a href="{{ url('/construct') }}" class="nav-item nav-link"><i class="fa fa-quote-right me-2"></i>Contact Us</a>
                     <a href="{{ url('/') }}" class="nav-item nav-link"><i class="fa fa-fast-backward me-2"></i>Home</a>
                 </div>
             </nav>
@@ -89,7 +89,7 @@
                             <span class="d-none d-lg-inline-flex">{{ Auth::user()->name }}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="{{ url('/profil') }}" class="dropdown-item">Profile</a>
+                            <a href="{{ url('/construct') }}" class="dropdown-item">Profile</a>
                             <a href="{{ url('/reservation') }}" class="dropdown-item">Reservation</a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
@@ -112,8 +112,13 @@
                                 <dt class="col-sm-4">E-mail</dt>
                                 <dd class="col-sm-8">{{ Auth::user()->email }}</dd>
 
+                                @php
+                                    $date = Illuminate\Support\Carbon::parse(Auth::user()->created_at);
+                                    $formatteddate = $date->format('j M Y');
+                                @endphp
+
                                 <dt class="col-sm-4">Member since</dt>
-                                <dd class="col-sm-8">{{ Auth::user()->created_at }}</dd>
+                                <dd class="col-sm-8">{{ $formatteddate }}</dd>
                             </dl>
                         </div>
                     </div>
@@ -133,7 +138,16 @@
                                             <img class="img-fluid rounded-circle mx-auto mb-4" src="{{ asset('img/discount.png') }}" style="width: 100px; height: 100px;">
                                             <h5 class="mb-1">Promotion available today !</h5>
                                             <p>{{ $promotion->name }}</p>
-                                            <p class="mb-0">come and take advantage of this promotion on our car of our selection which did not last forever, it started {{ $promotion->startDate }} until {{ $promotion->endDate }}.</p>
+                                            @php
+                                                $startDate = Illuminate\Support\Carbon::parse($promotion->startDate);
+                                                $endDate = Illuminate\Support\Carbon::parse($promotion->endDate);
+                                                $formattedStartDate = $startDate->format('j M Y');
+                                                $formattedEndDate = $endDate->format('j M Y');
+                                            @endphp
+                                            <p class="mb-0">
+                                                come and take advantage of this promotion on our car of our selection which did not last forever, it started <br>
+                                                {{ $formattedStartDate }} until {{ $formattedEndDate }}.
+                                            </p>
                                             <a href="{{ url('/contest') }}">Know more...</a>
                                         </div>
                                     @endforeach

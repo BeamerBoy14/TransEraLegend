@@ -11,4 +11,9 @@ class reservation extends Model
     protected $table = 'reservation';
 
     use HasFactory;
+
+    public static function getUserReservations($userId)
+    {
+        return self::where('user_id', $userId)->get();
+    }    
 }

@@ -100,7 +100,7 @@
             </nav>
             <!-- Navbar End -->
 
-            <!-- Blank Start -->
+
             <div class="container-fluid pt-4 px-4">
                 <div class="row vh-100 bg-secondary rounded mx-0">
                     <div class="col-md-15 text-center">
@@ -115,71 +115,45 @@
                             <div class="d-flex align-items-center justify-content-between mb-2">
                                 <h6 class="mb-0">Reservation list</h6>
                             </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
+                            @forelse ($reservations as $reservation)
+                                @php
+                                    $car = App\Models\Car::getById($reservation->car_id);
+                                @endphp
+                                <div class="d-flex align-items-center border-bottom py-3">
+                                    <img class="rounded-circle flex-shrink-0" src="{{ asset('img/'. $car->imgSemiSide) }}" alt="" style="width: 40px; height: 40px;">
+                                    <div class="w-100 ms-3">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            @php
+                                                $startDate = Illuminate\Support\Carbon::parse($reservation->startDate);
+                                                $endDate = Illuminate\Support\Carbon::parse($reservation->endDate);
+                                                $formattedStartDate = $startDate->format('j M Y');
+                                                $formattedEndDate = $endDate->format('j M Y');
+                                            @endphp
+                                            <small> {{ $formattedStartDate }} to {{ $formattedEndDate }} </small>
+                                        </div>
+                                        <span>Car reserved: {{ $car->brandName() }}  {{ $car->model }}  </span>
                                     </div>
-                                    <span>Short message goes here...</span>
                                 </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
+                            @empty
+                                <div class="alert alert-info">No reservations :(</div>
+                            @endforelse
+                        </div>
+                    </div>
+                    <div class="col-md-15">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Car List</h6>
+                            <ul class="list-group list-group-flush">
+                                
+                                <li class="list-group-item bg-transparent">An item</li>
+                                <li class="list-group-item bg-transparent">A second item</li>
+                                <li class="list-group-item bg-transparent">A third item</li>
+                                <li class="list-group-item bg-transparent">A fourth item</li>
+                                <li class="list-group-item bg-transparent">And a fifth one</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Blank End -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">

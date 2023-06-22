@@ -52,7 +52,7 @@
 
                             <div class="d-flex justify-content-center">
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link" href="{{ url('/construct') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
