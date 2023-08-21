@@ -1,7 +1,7 @@
 https://www.youtube.com/watch?v=FeYWEcbg2lc&ab_channel=NordCoders
 
 https://remixicon.com/
-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
+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
 
 forget password
 <a class="btn btn-link" href="{{ route('password.request') }}">
