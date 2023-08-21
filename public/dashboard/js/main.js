@@ -210,3 +210,7 @@
     
 })(jQuery);
 
+function clickCar(carId) {
+    var select = document.getElementById('floatingSelect');
+    select.value = carId;
+}

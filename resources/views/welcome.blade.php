@@ -132,7 +132,7 @@
                 @foreach ($cars as $car)
                     <article class="featured__card mix {{ strtolower($car->brandName()) }}">
                     <div class="shape shape__smaller"></div>
-                    <h1 class="featured__title">{{ $car->brandName() }}</h1>
+                    <h1 class="featured__title">{{ strtoupper($car->brandName()) }}</h1>
                     <h3 class="featured__subtitle">{{ $car->model }}</h3>
                     <a href="{{ url('/car/' . $car->id)}}"><img src="{{ asset('img/'. $car->imgSemiSide ) }}" alt="" class="featured__img"></a>
                     <h3 class="featured__price">{{ $car->price }}€ / day</h3>
@@ -212,13 +212,13 @@
 
             <ul class="footer__links">
                 <li>
-                    <a href="{{ url('/construct') }}" class="footer__link">About</a>
+                    <a href="{{ url('/#featured') }}" class="footer__link">Cars</a>
                 </li>
                 <li>
-                    <a href="#featured" class="footer__link">Cars</a>
+                    <a href="{{ url('/cgInfo') }}" class="footer__link">general condition</a>
                 </li>
                 <li>
-                    <a href="{{ url('/construct') }}" class="footer__link">History</a>
+                    <a href="{{ url('/construct') }}" class="footer__link">additional pricing</a>
                 </li>
             </ul>
         </div>

@@ -287,3 +287,55 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+
+/* Style personnalisé pour le sélecteur de date */
+.flatpickr-calendar {
+    background-color: #333; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+}
+
+.flatpickr-days .flatpickr-day {
+    color: #fff; /* Couleur du texte des jours */
+}
+
+.flatpickr-monthDropdown-months, .flatpickr-monthDropdown-year {
+    background-color: #444; /* Couleur de fond pour les menus déroulants mois et année */
+    color: #fff; /* Couleur du texte pour les menus déroulants mois et année */
+}
+
+.flatpickr-months .flatpickr-prev-month, .flatpickr-months .flatpickr-next-month {
+    color: #fff; /* Couleur des flèches précédentes et suivantes */
+}
+
+.flatpickr-months .flatpickr-month {
+    color: #fff; /* Couleur du mois sélectionné */
+}
+
+.flatpickr-months .flatpickr-current-month {
+    background-color: #555; /* Couleur de fond pour le mois actuel */
+}
+
+.flatpickr-months .flatpickr-day.today {
+    background-color: #666; /* Couleur de fond pour le jour actuel */
+}
+
+.flatpickr-months .flatpickr-day.selected {
+    background-color: #007bff; /* Couleur de fond pour le jour sélectionné */
+}
+
+/* Style pour le conteneur de calendrier */
+#date-picker-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style pour le bouton d'affichage du calendrier */
+#date-picker-button {
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}

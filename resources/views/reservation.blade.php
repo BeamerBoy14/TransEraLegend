@@ -64,7 +64,7 @@
                     <a href="{{ url('/home') }}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="{{ url('/profil') }}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Profile</a>
                     <a href="{{ url('/reservation') }}" class="nav-item nav-link active"><i class="fa fa-calendar me-2"></i>Reservation</a>
-                    <a href="{{ url('/contest') }}" class="nav-item nav-link"><i class="fa fa-quote-right me-2"></i>Contact Us</a>
+                    <a href="{{ url('/contest') }}" class="nav-item nav-link"><i class="fa fa-quote-right me-2"></i>Contest</a>
                     <a href="{{ url('/') }}" class="nav-item nav-link"><i class="fa fa-fast-backward me-2"></i>Home</a>
                 </div>
             </nav>
@@ -73,10 +73,11 @@
 
         <!-- Content Start -->
         <div class="content">
+            
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+                <a href="{{ url('/home') }}"" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-user"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
@@ -102,7 +103,7 @@
 
 
             <div class="container-fluid pt-4 px-4">
-                <div class="row vh-100 bg-secondary rounded mx-0">
+                <div class="row vh-1000 bg-secondary rounded mx-0">
                     <div class="col-md-15 text-center">
                         <h1 class="mt-3"> Reservation </h1>
                         <div class="d-flex align-items-center justify-content-between mb-4">
@@ -110,7 +111,7 @@
                         </div>
                         <div id="calender"></div>
                     </div>
-                    <div class="col-md-15">
+                    <div class="col-md-15 col-md-6 col-xl-4">
                         <div class="h-100 bg-secondary rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-2">
                                 <h6 class="mb-0">Reservation list</h6>
@@ -120,7 +121,7 @@
                                     $car = App\Models\Car::getById($reservation->car_id);
                                 @endphp
                                 <div class="d-flex align-items-center border-bottom py-3">
-                                    <img class="rounded-circle flex-shrink-0" src="{{ asset('img/'. $car->imgSemiSide) }}" alt="" style="width: 40px; height: 40px;">
+                                    <img class="rounded-circle flex-shrink-0" src="{{ asset('img/'. $car->imgSemiSide) }}" alt="" style="width: 50px; height: 40px;">
                                     <div class="w-100 ms-3">
                                         <div class="d-flex w-100 justify-content-between">
                                             @php
@@ -132,24 +133,47 @@
                                             <small> {{ $formattedStartDate }} to {{ $formattedEndDate }} </small>
                                         </div>
                                         <span>Car reserved: {{ $car->brandName() }}  {{ $car->model }}  </span>
+                                        <form action="{{ route('delete.reservation', ['id' => $reservation->id]) }}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button  class="btn btn-outline-danger w-100 m-2" type="submit" onclick="return confirm('Are you sure you want to delete this reservation n°{{ $reservation->id }} ?')">Delete</button >
+                                        </form>
                                     </div>
                                 </div>
                             @empty
-                                <div class="alert alert-info">No reservations :(</div>
+                                No reservations :(
                             @endforelse
                         </div>
                     </div>
-                    <div class="col-md-15">
+                    <div class="col-md-15 col-md-6 col-xl-4">
                         <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Car List</h6>
+                            <h6 class="mb-4">Car available to rent</h6>
                             <ul class="list-group list-group-flush">
-                                
-                                <li class="list-group-item bg-transparent">An item</li>
-                                <li class="list-group-item bg-transparent">A second item</li>
-                                <li class="list-group-item bg-transparent">A third item</li>
-                                <li class="list-group-item bg-transparent">A fourth item</li>
-                                <li class="list-group-item bg-transparent">And a fifth one</li>
+                                @foreach ($cars as $car)
+                                <li class="list-group-item bg-transparent" onclick="clickCar({{ $car->id }})">
+                                    <img src="{{ asset('img/'. $car->imgSemiSide) }}" style="width: 50px; height: 40px;">
+                                    {{ $car->brandName() }}  {{ $car->model }}
+                                </li>
+                                @endforeach
                             </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-15 col-md-6 col-xl-4">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <form action="{{ route('create.reservation') }}" method="post">
+                                @csrf
+                                <h6 class="mb-4">Your next reservation - Date</h6>
+                                <select class="form-select" id="floatingSelect" name="car_id" aria-label="Floating label select example">
+                                        <option selected>Select your car</option>
+                                        @foreach ($cars as $car)
+                                            <option value="{{ $car->id }}">{{ $car->brandName() }} - {{ $car->model }}</option>
+                                        @endforeach
+                                </select>
+                                <input type="date" id="date-picker" name="start_date" placeholder="Sélectionnez une date">
+                                <input type="date" id="end" name="end_date">
+                                <input type="hidden" name="user_id" value="{{ auth()->id() }}">
+                                <button class="btn btn-outline-info w-100 m-2" type="submit" onclick="return confirm('an email will be send to you')">Create reservation</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -168,6 +192,7 @@
                 </div>
             </div>
             <!-- Footer End -->
+
         </div>
         <!-- Content End -->
 
@@ -192,7 +217,7 @@
     <script src="{{asset('/dashboard/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
     <script src="{{asset('/dashboard/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 
-    <!-- Template Javascript -->
+    <!-- Main Javascript -->
     <script src="{{asset('/dashboard/js/main.js')}}"></script>
 </body>
 

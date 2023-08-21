@@ -22,6 +22,7 @@ use App\Models\Reservation;
 Route::view('main','main');
 Route::view('connect','connect');
 Route::view('add','add');
+Route::view('cgInfo','cgInfo');
 Route::view('profil','profil');
 Route::view('reservation','reservation');
 Route::view('contest','contest');
@@ -62,8 +63,14 @@ Route::get('/logout', function () {
 })->name('logout');
 
 //--------------------------------------------------------------------------
-//********************************OTHER************************************* 
+//********************************POST************************************* 
 //--------------------------------------------------------------------------
 
+Route::post('/create-reservation', [App\Http\Controllers\ReservationController::class, 'createReservation'])->name('create.reservation');
+Route::delete('/delete-reservation/{id}', [App\Http\Controllers\ReservationController::class, 'deleteReservation'])->name('delete.reservation');
+
+//--------------------------------------------------------------------------
+//********************************OTHER************************************* 
+//--------------------------------------------------------------------------
 Auth::routes();
 

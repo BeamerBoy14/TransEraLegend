@@ -35,9 +35,12 @@
     <!--==================== OFFER ====================-->
     <section class="offer section" id="offer">
         <div class="offer__container container grid">
-            <img src="{{asset('img/bg3.png')}}" alt="" class="offer__bg">
+            <img src="{{asset('img/bg7.png')}}" alt="" class="offer__bg">
             <div class="popular__container container swiper">
                 <div class="swiper-wrapper">
+                    <article class="popular__card2 swiper-slide">
+                        <img src="{{asset('img/'. $car->imgSemiSide )}}" alt="" class="popular__img2">
+                    </article>
                     <article class="popular__card2 swiper-slide">
                         <img src="{{asset('img/'. $car->imgExt )}}" alt="" class="popular__img2">
                     </article>
@@ -56,7 +59,6 @@
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-            <img src="{{asset('img/'. $car->imgSemiSide )}}"" alt="" class="offer__img">
         </div>
     </section>
 
@@ -138,7 +140,7 @@
                         <i class="ri-number-3"></i>
                     </div>
                     <h2 class="home__car-number">{{ $car->priceWeekEnd }}€</h2>
-                    <h3 class="home__car-name">Friday to monday</h3>
+                    <h3 class="home__car-name">Week end</h3>
                 </div>
                 <div class="home__car-data">
                     <div class="home__car-icon">
@@ -203,13 +205,13 @@
 
             <ul class="footer__links">
                 <li>
-                    <a href="#" class="footer__link">About</a>
+                    <a href="{{ url('/#featured') }}" class="footer__link">Cars</a>
                 </li>
                 <li>
-                    <a href="#featured" class="footer__link">Cars</a>
+                    <a href="{{ url('/cgInfo') }}" class="footer__link">General Condition</a>
                 </li>
                 <li>
-                    <a href="#" class="footer__link">History</a>
+                    <a href="{{ url('/construct') }}" class="footer__link">Additional Pricing</a>
                 </li>
             </ul>
         </div>
@@ -221,10 +223,10 @@
 
             <ul class="footer__links">
                 <li>
-                    <a href="#" class="footer__link">Contact us</a>
+                    <a href="{{ url('/construct') }}" class="footer__link">Contact us</a>
                 </li>
                 <li>
-                    <a href="#" class="footer__link">Services</a>
+                    <a href="{{ url('/construct') }}" class="footer__link">Services</a>
                 </li>
             </ul>
         </div>
@@ -296,13 +298,13 @@
     
                 <ul class="footer__links">
                     <li>
-                        <a href="#" class="footer__link">About</a>
+                        <a href="{{ url('/#featured') }}" class="footer__link">Cars</a>
                     </li>
                     <li>
-                        <a href="#featured" class="footer__link">Cars</a>
+                        <a href="{{ url('/cgInfo') }}" class="footer__link">General Condition</a>
                     </li>
                     <li>
-                        <a href="#" class="footer__link">History</a>
+                        <a href="{{ url('/construct') }}" class="footer__link">Additional Pricing</a>
                     </li>
                 </ul>
             </div>

@@ -44,8 +44,8 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"></i>Your dashboard</h3>
+                <a href="{{ url('/home') }}" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"></i>Dashboard</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -64,8 +64,8 @@
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="{{ url('/construct') }}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>My Profile</a>
-                    <a href="{{ url('/construct') }}" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>My Reservation</a>
-                    <a href="{{ url('/construct') }}" class="nav-item nav-link"><i class="fa fa-quote-right me-2"></i>Contact Us</a>
+                    <a href="{{ url('/reservation') }}" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>My Reservation</a>
+                    <a href="{{ url('/construct') }}" class="nav-item nav-link"><i class="fa fa-quote-right me-2"></i>Contest</a>
                     <a href="{{ url('/') }}" class="nav-item nav-link"><i class="fa fa-fast-backward me-2"></i>Home</a>
                 </div>
             </nav>
@@ -131,7 +131,7 @@
                                         <h5 class="mb-1">Contest</h5>
                                         <p>Each month</p>
                                         <p class="mb-0">You can take advantage of the contest to enjoy the luxury offered by our agency for FREE</p>
-                                        <a href="{{ url('/contest') }}">Know more...</a>
+                                        <a href="{{ url('/construct') }}">Know more...</a>
                                     </div>
                                     @foreach($actuPromo as $promotion)
                                         <div class="testimonial-item text-center">
@@ -148,7 +148,7 @@
                                                 come and take advantage of this promotion on our car of our selection which did not last forever, it started <br>
                                                 {{ $formattedStartDate }} until {{ $formattedEndDate }}.
                                             </p>
-                                            <a href="{{ url('/contest') }}">Know more...</a>
+                                            <a href="{{ url('/construct') }}">Know more...</a>
                                         </div>
                                     @endforeach
                                 </div>
