@@ -123,13 +123,16 @@
                                 <div class="d-flex align-items-center border-bottom py-3">
                                     <img class="rounded-circle flex-shrink-0" src="{{ asset('img/'. $car->imgSemiSide) }}" alt="" style="width: 50px; height: 40px;">
                                     <div class="w-100 ms-3">
-                                        <div class="d-flex w-100 justify-content-between">
-                                            @php
-                                                $startDate = Illuminate\Support\Carbon::parse($reservation->startDate);
-                                                $endDate = Illuminate\Support\Carbon::parse($reservation->endDate);
-                                                $formattedStartDate = $startDate->format('j M Y');
-                                                $formattedEndDate = $endDate->format('j M Y');
-                                            @endphp
+                                        @php
+                                            $startDate = Illuminate\Support\Carbon::parse($reservation->startDate);
+                                            $endDate = Illuminate\Support\Carbon::parse($reservation->endDate);
+                                            $formattedStartDate = $startDate->format('j M Y');
+                                            $formattedEndDate = $endDate->format('j M Y');
+                                        @endphp
+                                        <div class="d-flex w-100 justify-content-between date-info"
+                                            data-startDate="{{ $startDate->format('j M Y') }}"
+                                            data-endDate="{{ $endDate->format('j M Y') }}"
+                                            >
                                             <small> {{ $formattedStartDate }} to {{ $formattedEndDate }} </small>
                                         </div>
                                         <span>Car reserved: {{ $car->brandName() }}  {{ $car->model }}  </span>
@@ -169,8 +172,8 @@
                                             <option value="{{ $car->id }}">{{ $car->brandName() }} - {{ $car->model }}</option>
                                         @endforeach
                                 </select>
-                                <input type="date" id="date-picker" name="start_date" placeholder="Sélectionnez une date">
-                                <input type="date" id="end" name="end_date">
+                                <input type="date" id="start" name="start_date" placeholder="Sélectionnez une date">
+                                <input type="date" id="end" id="end" name="end_date">
                                 <input type="hidden" name="user_id" value="{{ auth()->id() }}">
                                 <button class="btn btn-outline-info w-100 m-2" type="submit" onclick="return confirm('an email will be send to you')">Create reservation</button>
                             </form>
@@ -216,6 +219,8 @@
     <script src="{{asset('/dashboard/lib/tempusdominus/js/moment.min.js')}}"></script>
     <script src="{{asset('/dashboard/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
     <script src="{{asset('/dashboard/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+    <!-- Calendar -->
+    <script src="{{asset('js/calendar.js')}}"></script>
 
     <!-- Main Javascript -->
     <script src="{{asset('/dashboard/js/main.js')}}"></script>
