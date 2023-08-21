@@ -40,18 +40,22 @@ Route::get('/', function () {
     return view('welcome', compact('brands','cars','latestCar','availableCars'));
 });
 
-Route::get('/reservation', function (){
-    $user = Auth::user();
-    $cars = Car::getAllCars();
-    $reservations = Reservation::getUserReservations($user->id);
-    return view('reservation', compact('cars','reservations'));
-})->name('reservation');
+Route::middleware('auth')->group(function () {
+    
+    Route::get('/reservation', function (){
+        $user = Auth::user();
+        $cars = Car::getAllCars();
+        $reservations = Reservation::getUserReservations($user->id);
+        return view('reservation', compact('cars','reservations'));
+    })->name('reservation');
+    
+    Route::get('/home', function () {
+        $availableCars = Car::getAvailableCarsForTomorrow();
+        $actuPromo = Promotion::getPromotionsByDate();
+        return view('home', compact('availableCars', 'actuPromo'));
+    })->name('home');
+});
 
-Route::get('/home', function () {
-    $availableCars = Car::getAvailableCarsForTomorrow();
-    $actuPromo = Promotion::getPromotionsByDate();
-    return view('home', compact('availableCars', 'actuPromo'));
-})->name('home');
 
 Route::get('/events', [App\Http\Controllers\EventController::class, 'index']);
 Route::get('/car/{id}', [App\Http\Controllers\CarController::class, 'show'])->name('CarController@show');
