@@ -34,6 +34,7 @@ function validateDate(el)
     let date = new Date(target.value);
     let days = document.getElementsByClassName('day');
     resetColor(days);
+    setReservation();
     if (id == "start") {
         startDateValue = date;
     }
@@ -86,27 +87,30 @@ function resetColor(days) {
 
 // Si reservation
 let reservations = document.getElementsByClassName('date-info');
-console.log(reservations);
-for (let r of reservations) {
-    let startDateValue = new Date(r.dataset.startdate);
-    let endDateValue = new Date(r.dataset.enddate);
-    let days = document.getElementsByClassName('day');
-    Array.from(days).forEach((day) => {
-        let dayExplode = day.dataset.day.split('/');
-        let monthString = dayExplode[0];
-        let dayString = dayExplode[1];
-        let yearString = dayExplode[2];
-        if (endDateValue.getMonth() == startDateValue.getMonth()) {
-            if (dayString >= startDateValue.getDate() && dayString <= endDateValue.getDate() && monthString == (startDateValue.getMonth() + 1)) {
-                setColorReservation(day);
+function setReservation() {
+    for (let r of reservations) {
+        let startDateValue = new Date(r.dataset.startdate);
+        let endDateValue = new Date(r.dataset.enddate);
+        let days = document.getElementsByClassName('day');
+        Array.from(days).forEach((day) => {
+            let dayExplode = day.dataset.day.split('/');
+            let monthString = dayExplode[0];
+            let dayString = dayExplode[1];
+            let yearString = dayExplode[2];
+            if (endDateValue.getMonth() == startDateValue.getMonth()) {
+                if (dayString >= startDateValue.getDate() && dayString <= endDateValue.getDate() && monthString == (startDateValue.getMonth() + 1)) {
+                    setColorReservation(day);
+                }
+            } else {
+                if (
+                    (dayString >= startDateValue.getDate() && monthString == (startDateValue.getMonth() + 1)) ||
+                    (dayString <= endDateValue.getDate() && monthString == (endDateValue.getMonth() + 1))
+                ) {
+                    setColorReservation(day);
+                }
             }
-        } else {
-            if (
-                (dayString >= startDateValue.getDate() && monthString == (startDateValue.getMonth() + 1)) ||
-                (dayString <= endDateValue.getDate() && monthString == (endDateValue.getMonth() + 1))
-            ) {
-                setColorReservation(day);
-            }
-        }
-    });
+        });
+    }
 }
+setReservation();
+
