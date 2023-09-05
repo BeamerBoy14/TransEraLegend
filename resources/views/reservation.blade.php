@@ -172,8 +172,11 @@
                                             <option value="{{ $car->id }}">{{ $car->brandName() }} - {{ $car->model }}</option>
                                         @endforeach
                                 </select>
-                                <input type="date" id="start" name="start_date">
-                                <input type="date" id="end" name="end_date">
+                                @error('car_id')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                                <input type="date" id="start" name="start_date" class="form-control">
+                                <input type="date" id="end" name="end_date" class="form-control">
                                 <input type="hidden" name="user_id" value="{{ auth()->id() }}">
                                 <button class="btn btn-outline-primary w-100 m-2" type="submit" onclick="return confirm('an email will be send to you')">Create reservation</button>
                             </form>

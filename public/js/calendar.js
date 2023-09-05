@@ -18,11 +18,14 @@ nextButon.classList.add('disabled');
 nextButon.innerHTML = "";
 prevButton.classList.add('disabled');
 prevButton.innerHTML = "";
-//pickerSwitch.remove();
+pickerSwitch.classList.remove('picker-switch')
+pickerSwitch.dataset.action = "";
 
 // date event
-startDate.onchange = validateDate;
-endDate.onchange = validateDate;
+if (startDate != null) {
+    startDate.onchange = validateDate;
+    endDate.onchange = validateDate;
+}
 nextButon.addEventListener('click', setDays);
 prevButton.addEventListener('click', setDays);
 pickerButton.onchange = setDays;

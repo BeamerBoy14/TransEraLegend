@@ -144,6 +144,7 @@
                                                 $formattedStartDate = $startDate->format('j M Y');
                                                 $formattedEndDate = $endDate->format('j M Y');
                                             @endphp
+                                            </div>
                                             <p class="mb-0">
                                                 come and take advantage of this promotion on our car of our selection which did not last forever, it started <br>
                                                 {{ $formattedStartDate }} until {{ $formattedEndDate }}.
@@ -165,6 +166,22 @@
                                 <h6 class="mb-0">My location calendar</h6>
                                 <a href="">Show All</a>
                             </div>
+                            @foreach ($reservations as $reservation)
+                                @php
+                                    $car = App\Models\Car::getById($reservation->car_id);
+                                @endphp
+                                @php
+                                    $startDate = Illuminate\Support\Carbon::parse($reservation->startDate);
+                                    $endDate = Illuminate\Support\Carbon::parse($reservation->endDate);
+                                    $formattedStartDate = $startDate->format('j M Y');
+                                    $formattedEndDate = $endDate->format('j M Y');
+                                @endphp
+                                <div class="date-info"
+                                    data-startDate="{{ $startDate->format('j M Y') }}"
+                                    data-endDate="{{ $endDate->format('j M Y') }}"
+                                    >
+                                </div>
+                            @endforeach
                             <div id="calender"></div>
                         </div>
                     </div>
