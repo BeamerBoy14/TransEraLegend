@@ -76,7 +76,7 @@ function setColor(day) {
 }
 
 function setColorReservation(day) {
-    day.style.backgroundColor = 'green';
+    day.style.backgroundColor = '#270c80';
 }
 
 function resetColor(days) {

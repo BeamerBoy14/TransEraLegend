@@ -62,9 +62,9 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="{{ url('/home') }}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="{{ url('/profil') }}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Profile</a>
+                    <a href="{{ url('/construct') }}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Profile</a>
                     <a href="{{ url('/reservation') }}" class="nav-item nav-link active"><i class="fa fa-calendar me-2"></i>Reservation</a>
-                    <a href="{{ url('/contest') }}" class="nav-item nav-link"><i class="fa fa-quote-right me-2"></i>Contest</a>
+                    <a href="{{ url('/construct') }}" class="nav-item nav-link"><i class="fa fa-quote-right me-2"></i>Contest</a>
                     <a href="{{ url('/') }}" class="nav-item nav-link"><i class="fa fa-fast-backward me-2"></i>Home</a>
                 </div>
             </nav>
@@ -89,7 +89,7 @@
                             <span class="d-none d-lg-inline-flex">{{ Auth::user()->name }}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="{{ url('/profil') }}" class="dropdown-item">Profile</a>
+                            <a href="{{ url('/construct') }}" class="dropdown-item">Profile</a>
                             <a href="{{ url('/reservation') }}" class="dropdown-item">Reservation</a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
@@ -144,7 +144,7 @@
                                     </div>
                                 </div>
                             @empty
-                                No reservations :(
+                                No reservations
                             @endforelse
                         </div>
                     </div>
@@ -172,10 +172,10 @@
                                             <option value="{{ $car->id }}">{{ $car->brandName() }} - {{ $car->model }}</option>
                                         @endforeach
                                 </select>
-                                <input type="date" id="start" name="start_date" placeholder="Sélectionnez une date">
-                                <input type="date" id="end" id="end" name="end_date">
+                                <input type="date" id="start" name="start_date">
+                                <input type="date" id="end" name="end_date">
                                 <input type="hidden" name="user_id" value="{{ auth()->id() }}">
-                                <button class="btn btn-outline-info w-100 m-2" type="submit" onclick="return confirm('an email will be send to you')">Create reservation</button>
+                                <button class="btn btn-outline-primary w-100 m-2" type="submit" onclick="return confirm('an email will be send to you')">Create reservation</button>
                             </form>
                         </div>
                     </div>
@@ -221,7 +221,6 @@
     <script src="{{asset('/dashboard/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
     <!-- Calendar -->
     <script src="{{asset('js/calendar.js')}}"></script>
-
     <!-- Main Javascript -->
     <script src="{{asset('/dashboard/js/main.js')}}"></script>
 </body>

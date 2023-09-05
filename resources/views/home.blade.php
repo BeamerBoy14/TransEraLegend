@@ -172,7 +172,7 @@
                         <div class="bg-secondary text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <div class="owl-carousel testimonial-carousel">
-                                    @foreach ($availableCars as $car)
+                                    @forelse ($availableCars as $car)
                                     <div class="testimonial-item text-center">
                                         <img class="img-fluid rounded-circle mx-auto mb-4" src="{{ asset('img/'. $car->imgSemiSide) }}" style="width: 125px; height: 100px;">
                                         <h5 class="mb-1">{{ $car->brand }}</h5>
@@ -180,7 +180,9 @@
                                         <p class="mb-0">{{ $car->feature }}</p>
                                         <a href="{{ url('/car/' . $car->id)}}">Rent Now !</a>
                                     </div>
-                                    @endforeach
+                                    @empty
+                                        <p>No car available</p>
+                                    @endforelse
                                 </div>
                             </div>
                         </div>
@@ -220,7 +222,8 @@
     <script src="{{asset('/dashboard/lib/tempusdominus/js/moment.min.js')}}"></script>
     <script src="{{asset('/dashboard/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
     <script src="{{asset('/dashboard/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-
+    <!-- Calendar -->
+    <script src="{{asset('js/calendar.js')}}"></script>
     <!-- Template Javascript -->
     <script src="{{asset('/dashboard/js/main.js')}}"></script>
 </body>

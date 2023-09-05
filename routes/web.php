@@ -46,13 +46,15 @@ Route::middleware('auth')->group(function () {
         $user = Auth::user();
         $cars = Car::getAllCars();
         $reservations = Reservation::getUserReservations($user->id);
-        return view('reservation', compact('cars','reservations'));
+        return view('reservation', compact('cars', 'reservations'));
     })->name('reservation');
     
     Route::get('/home', function () {
+        $user = Auth::user();
         $availableCars = Car::getAvailableCarsForTomorrow();
         $actuPromo = Promotion::getPromotionsByDate();
-        return view('home', compact('availableCars', 'actuPromo'));
+        $reservations = Reservation::getUserReservations($user->id);
+        return view('home', compact('availableCars', 'actuPromo', 'reservations'));
     })->name('home');
 });
 
