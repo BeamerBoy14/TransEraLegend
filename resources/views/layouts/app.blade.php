@@ -24,9 +24,9 @@
                     <li class="nav__item">
                         <a href="{{ url('/#home') }}" class="nav__link">Home</a>
                     </li>
-                    <li class="nav__item">
+                    <!--<li class="nav__item">
                         <a href="{{ url('/#popular') }}" class="nav__link">Available</a>
-                    </li>
+                    </li>-->
                     <li class="nav__item">
                         <a href="{{ url('/#featured') }}" class="nav__link">All fleet</a>
                     </li>

@@ -70,7 +70,7 @@
     </section>
 
     <!--==================== POPULAR ====================-->
-    <section class="popular section" id="popular">
+    <!--<section class="popular section" id="popular">
         <h2 class="section__title">
             Car available now <br> in the fleet
         </h2>
@@ -103,7 +103,7 @@
             </div>
             <div class="swiper-pagination"></div>
         </div>
-    </section>
+    </section>-->
 
     <!--==================== FEATURED ====================-->
     <section class="featured section" id="featured">

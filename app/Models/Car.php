@@ -39,6 +39,30 @@ class Car extends Model
         return $this->hasMany(Reservation::class);
     }
 
+    public function isAvailableForReservation($startDate, $endDate)
+    {
+        // Convert input dates to Carbon instances for easy comparison
+        $start = Carbon::parse($startDate);
+        $end = Carbon::parse($endDate);
+
+        // Query the reservations table to check for overlapping reservations
+        $overlappingReservations = Reservation::where('car_id', $this->id)
+            ->where(function ($query) use ($start, $end) {
+                // Check for reservations that overlap with the provided dates
+                $query->where(function ($subquery) use ($start, $end) {
+                    $subquery->where('startDate', '<', $start)
+                        ->where('endDate', '>', $start);
+                })->orWhere(function ($subquery) use ($start, $end) {
+                    $subquery->where('startDate', '<', $end)
+                        ->where('endDate', '>', $end);
+                });
+            })
+            ->exists();
+
+        // If there are overlapping reservations, the car is not available
+        return !$overlappingReservations;
+    }
+
     public static function getAvailableCarsForTomorrow()
     {
         $tomorrow = Carbon::tomorrow();

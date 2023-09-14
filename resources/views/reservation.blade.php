@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
@@ -61,11 +61,16 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="{{ url('/home') }}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="{{ url('/construct') }}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>Profile</a>
-                    <a href="{{ url('/reservation') }}" class="nav-item nav-link active"><i class="fa fa-calendar me-2"></i>Reservation</a>
-                    <a href="{{ url('/construct') }}" class="nav-item nav-link"><i class="fa fa-quote-right me-2"></i>Contest</a>
-                    <a href="{{ url('/') }}" class="nav-item nav-link"><i class="fa fa-fast-backward me-2"></i>Home</a>
+                    <a href="{{ url('/home') }}"        class="nav-item nav-link">          <i class="fa fa-tachometer-alt me-2">   </i>Dashboard</a>
+                    <a href="{{ url('/construct') }}"   class="nav-item nav-link">          <i class="fa fa-address-card me-2">     </i>My Profile</a>
+                    <a href="{{ url('/reservation') }}" class="nav-item nav-link active">   <i class="fa fa-calendar me-2">         </i>My Reservation</a>
+                    <a href="{{ url('/construct') }}"   class="nav-item nav-link">          <i class="fa fa-quote-right me-2">      </i>Contest</a>
+                    <a href="{{ url('/#featured') }}"   class="nav-item nav-link">          <i class="fa fa-car me-2">              </i>Cars</a>
+                    <a href="{{ url('/cgInfo') }}"      class="nav-item nav-link">          <i class="fa fa-balance-scale me-2">    </i>General Condition</a>
+                    <a href="{{ url('/construct') }}"   class="nav-item nav-link">          <i class="fa fa-plus-square me-2">      </i>Additional Pricing</a>
+                    <a href="{{ url('/construct') }}"   class="nav-item nav-link">          <i class="fa fa-comments me-2">         </i>Contact Us</a>
+                    <a href="{{ url('/construct') }}"   class="nav-item nav-link">          <i class="fa fa-bars me-2">             </i>Services</a>
+                    <a href="{{ url('/') }}"            class="nav-item nav-link">          <i class="fa fa-fast-backward me-2">    </i>Home</a>
                 </div>
             </nav>
         </div>
@@ -175,10 +180,13 @@
                                 @error('car_id')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                                <input type="date" id="start" name="start_date" class="form-control">
-                                <input type="date" id="end" name="end_date" class="form-control">
+                                <label for="end" class="clickable-label">
+                                    select date: (click on right side)
+                                    <input type="date" id="start" name="start_date" class="form-control">
+                                    <input type="date" id="end" name="end_date" class="form-control">
+                                </label>
                                 <input type="hidden" name="user_id" value="{{ auth()->id() }}">
-                                <button class="btn btn-outline-primary w-100 m-2" type="submit" onclick="return confirm('an email will be send to you')">Create reservation</button>
+                                <button class="btn btn-outline-light" type="submit" onclick="return confirm('an email will be send to  (if the reservation doesnt be created, retry with new information)')">Create reservation</button>
                             </form>
                         </div>
                     </div>

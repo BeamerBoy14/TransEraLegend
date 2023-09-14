@@ -1,7 +1,7 @@
 https://www.youtube.com/watch?v=FeYWEcbg2lc&ab_channel=NordCoders
 
 https://remixicon.com/
-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
+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
 
 forget password
 <a class="btn btn-link" href="{{ route('password.request') }}">
@@ -18,18 +18,18 @@ NULL, 'carImg/m66.png', 'carImg/m63.jpg', 'carImg/m61.jpg', 'carImg/m64.jpg', 'c
 
 INSERT INTO car VALUES (3,'Class S', 3 , 200 , 'Diesel', 'Luxious car', 1, 329, 150, 150, 150, 150, 'Experience the elegance and sophistication of the Mercedes S-Class, with 
 its timeless design and outstanding performance. Enjoy the luxurious interior, advanced technology, and advanced semi-autonomous driving system, providing unparalleled 
-comfort, safety, and driving experience. Indulge in the epitome of luxury and innovation with the Mercedes S-Class.', carImg/classes1.jpg, carImg/classes2.jpg, 
-carImg/classes3.jpg, carImg/classes4.jpg, carImg/classes5.jpg, carImg/classes6.jpg, carImg/classes7.jpg, '2023-06-03 00:00:00', NULL);
+comfort, safety, and driving experience. Indulge in the epitome of luxury and innovation with the Mercedes S-Class.', 'carImg/classes1.jpg', 'carImg/classes2.jpg', 
+'carImg/classes3.jpg', 'carImg/classes4.jpg', 'carImg/classes5.jpg', 'carImg/classes6.jpg', 'carImg/classes7.jpg', '2023-06-03 00:00:00', NULL);
 
 INSERT INTO car VALUES (4, 'C8', 4, 451,'Essence', 'USA car', 1, 329, 300, 300, 300, 300, 'Dive into the thrill of the Chevrolet Corvette C8, an epitome of speed and 
 precision. Its mid-engine layout and powerful V8 engine deliver breathtaking performance, while its sleek and aerodynamic design turns heads on every corner. Experience 
-the ultimate driving experience with the iconic Corvette C8.', carImg/c81.jpg, carImg/c82.jpg, carImg/c83.jpg, carImg/c84.jpg, carImg/c85.jpg, carImg/c86.jpg, 
-carImg/c87.jpg, '2023-06-04 00:00:00', NULL);
+the ultimate driving experience with the iconic Corvette C8.', 'carImg/c81.jpg', 'carImg/c82.jpg', 'carImg/c83.jpg', 'carImg/c84.jpg', 'carImg/c85.jpg', 'carImg/c86.jpg', 
+'carImg/c87.jpg', '2023-06-04 00:00:00', NULL);
 
 INSERT INTO car VALUES (5, 'SUPRA MK4', 5, 281,'Essence', 'tunning car', 1, 329, 200, 200, 200, 200, 'Experience the iconic Toyota Supra MK4, a symbol of power and elegance. 
 Its legendary 2JZ-GTE engine delivers breathtaking performance, while its iconic and aerodynamic design commands attention. Dive into the ultimate driving experience with this 
-timeless icon of speed and performance', carImg/supramk41.jpg, carImg/supramk42.jpg, carImg/supramk43.jpg, carImg/supramk44.jpg, carImg/supramk45.jpg, carImg/supramk46.jpg, 
-carImg/supramk47.jpg, '2023-06-05 00:00:00', NULL);
+timeless icon of speed and performance', 'carImg/supramk41.jpg', 'carImg/supramk42.jpg', 'carImg/supramk43.jpg', 'carImg/supramk44.jpg', 'carImg/supramk45.jpg', 'carImg/supramk46.jpg', 
+'carImg/supramk47.jpg', '2023-06-05 00:00:00', NULL);
 
 INSERT INTO brand (name, imglogowhite) VALUES
   ('ford', 'brandImg/logof.png'),

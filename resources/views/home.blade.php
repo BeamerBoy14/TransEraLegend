@@ -62,11 +62,16 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="{{ url('/construct') }}" class="nav-item nav-link"><i class="fa fa-address-card me-2"></i>My Profile</a>
-                    <a href="{{ url('/reservation') }}" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>My Reservation</a>
-                    <a href="{{ url('/construct') }}" class="nav-item nav-link"><i class="fa fa-quote-right me-2"></i>Contest</a>
-                    <a href="{{ url('/') }}" class="nav-item nav-link"><i class="fa fa-fast-backward me-2"></i>Home</a>
+                    <a href="{{ url('/home') }}"        class="nav-item nav-link active">   <i class="fa fa-tachometer-alt me-2">   </i>Dashboard</a>
+                    <a href="{{ url('/construct') }}"   class="nav-item nav-link">          <i class="fa fa-address-card me-2">     </i>My Profile</a>
+                    <a href="{{ url('/reservation') }}" class="nav-item nav-link">          <i class="fa fa-calendar me-2">         </i>My Reservation</a>
+                    <a href="{{ url('/construct') }}"   class="nav-item nav-link">          <i class="fa fa-quote-right me-2">      </i>Contest</a>
+                    <a href="{{ url('/#featured') }}"   class="nav-item nav-link">          <i class="fa fa-car me-2">              </i>Cars</a>
+                    <a href="{{ url('/cgInfo') }}"      class="nav-item nav-link">          <i class="fa fa-balance-scale me-2">    </i>General Condition</a>
+                    <a href="{{ url('/construct') }}"   class="nav-item nav-link">          <i class="fa fa-plus-square me-2">      </i>Additional Pricing</a>
+                    <a href="{{ url('/construct') }}"   class="nav-item nav-link">          <i class="fa fa-comments me-2">         </i>Contact Us</a>
+                    <a href="{{ url('/construct') }}"   class="nav-item nav-link">          <i class="fa fa-bars me-2">             </i>Services</a>
+                    <a href="{{ url('/') }}"            class="nav-item nav-link">          <i class="fa fa-fast-backward me-2">    </i>Home</a>
                 </div>
             </nav>
         </div>
@@ -108,15 +113,12 @@
                             <dl class="row mb-0">
                                 <dt class="col-sm-4">Name</dt>
                                 <dd class="col-sm-8">{{ Auth::user()->name }}</dd>
-
                                 <dt class="col-sm-4">E-mail</dt>
                                 <dd class="col-sm-8">{{ Auth::user()->email }}</dd>
-
                                 @php
                                     $date = Illuminate\Support\Carbon::parse(Auth::user()->created_at);
                                     $formatteddate = $date->format('j M Y');
                                 @endphp
-
                                 <dt class="col-sm-4">Member since</dt>
                                 <dd class="col-sm-8">{{ $formatteddate }}</dd>
                             </dl>
