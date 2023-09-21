@@ -26,6 +26,7 @@ Route::view('cgInfo','cgInfo');
 Route::view('profil','profil');
 Route::view('reservation','reservation');
 Route::view('contest','contest');
+Route::view('contact','contact');
 Route::view('construct','construct');
 
 //--------------------------------------------------------------------------
@@ -56,6 +57,10 @@ Route::middleware('auth')->group(function () {
         $reservations = Reservation::getUserReservations($user->id);
         return view('home', compact('availableCars', 'actuPromo', 'reservations'));
     })->name('home');
+
+    Route::get('/contact', function (){
+        return view('contact');
+    })->name('contact');
 });
 
 

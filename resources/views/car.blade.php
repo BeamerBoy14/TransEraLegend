@@ -132,29 +132,29 @@
                     <div class="home__car-icon">
                         <i class="ri-number-1"></i>
                     </div>
-                    <h2 class="home__car-number">{{ $car->price }}€</h2>
-                    <h3 class="home__car-name">per day</h3>
+                    <h2 class="home__car-number">{{ $car->price }}</h2>
+                    <h3 class="home__car-name">euros per day</h3>
                 </div>
                 <div class="home__car-data">
                     <div class="home__car-icon">
                         <i class="ri-number-3"></i>
                     </div>
-                    <h2 class="home__car-number">{{ $car->priceWeekEnd }}€</h2>
-                    <h3 class="home__car-name">Week end</h3>
+                    <h2 class="home__car-number">{{ $car->priceWeekEnd }}</h2>
+                    <h3 class="home__car-name">Week end (72h)</h3>
                 </div>
                 <div class="home__car-data">
                     <div class="home__car-icon">
                         <i class="ri-number-7"></i>
                     </div>
-                    <h2 class="home__car-number">{{ $car->priceWeek }}€</h2>
-                    <h3 class="home__car-name">per week</h3>
+                    <h2 class="home__car-number">{{ $car->priceWeek }}</h2>
+                    <h3 class="home__car-name">euros per week</h3>
                 </div>
                 <div class="home__car-data">
                     <div class="home__car-icon">
                         <i class="ri-number-3"></i><i class="ri-number-0"></i>
                     </div>
-                    <h2 class="home__car-number">{{ $car->priceMonth }}€</h2>
-                    <h3 class="home__car-name">per month</h3>
+                    <h2 class="home__car-number">{{ $car->priceMonth }}</h2>
+                    <h3 class="home__car-name">euros per month</h3>
                 </div>
             </div>
         </div>
@@ -223,7 +223,7 @@
 
             <ul class="footer__links">
                 <li>
-                    <a href="{{ url('/construct') }}" class="footer__link">Contact us</a>
+                    <a href="{{ url('/contact') }} class="footer__link">Contact us</a>
                 </li>
                 <li>
                     <a href="{{ url('/construct') }}" class="footer__link">Services</a>
@@ -316,10 +316,10 @@
     
                 <ul class="footer__links">
                     <li>
-                        <a href="#" class="footer__link">Contact us</a>
+                        <a href="{{ url('/contact') }}" class="footer__link">Contact us</a>
                     </li>
                     <li>
-                        <a href="#" class="footer__link">Services</a>
+                        <a href="{{ url('/construct') }}#" class="footer__link">Services</a>
                     </li>
                 </ul>
             </div>

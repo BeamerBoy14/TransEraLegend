@@ -230,7 +230,7 @@
 
             <ul class="footer__links">
                 <li>
-                    <a href="{{ url('/construct') }}" class="footer__link">Contact us</a>
+                    <a href="{{ url('/contact') }}" class="footer__link">Contact us</a>
                 </li>
                 <li>
                     <a href="{{ url('/construct') }}" class="footer__link">Services</a>

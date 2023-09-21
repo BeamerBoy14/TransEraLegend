@@ -25,7 +25,7 @@
     <link href="{{asset('dashboard/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')}}" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{asset('dashboard/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="{{asset('dashboard/css/style.css')}}" rel="stylesheet">
@@ -69,7 +69,7 @@
                     <a href="{{ url('/#featured') }}"   class="nav-item nav-link">          <i class="fa fa-car me-2">              </i>Cars</a>
                     <a href="{{ url('/cgInfo') }}"      class="nav-item nav-link">          <i class="fa fa-balance-scale me-2">    </i>General Condition</a>
                     <a href="{{ url('/construct') }}"   class="nav-item nav-link">          <i class="fa fa-plus-square me-2">      </i>Additional Pricing</a>
-                    <a href="{{ url('/construct') }}"   class="nav-item nav-link">          <i class="fa fa-comments me-2">         </i>Contact Us</a>
+                    <a href="{{ url('/contact') }}"     class="nav-item nav-link">          <i class="fa fa-comments me-2">         </i>Contact Us</a>
                     <a href="{{ url('/construct') }}"   class="nav-item nav-link">          <i class="fa fa-bars me-2">             </i>Services</a>
                     <a href="{{ url('/') }}"            class="nav-item nav-link">          <i class="fa fa-fast-backward me-2">    </i>Home</a>
                 </div>
