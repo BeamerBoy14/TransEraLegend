@@ -50,29 +50,27 @@
 		               	}, 1400);
 
 		               	setTimeout(function(){
-				               $('#form-message-success').fadeOut();   
+				            $('#form-message-success').fadeOut();   
 		               	}, 8000);
 
 		               	setTimeout(function(){
-				               $submit.css('display', 'none').text(waitText);  
+				            $submit.css('display', 'none').text(waitText);  
 		               	}, 1400);
 
 		               	setTimeout(function(){
-		               		$( '#contactForm' ).each(function(){
-											    this.reset();
-											});
+		               		$( '#contactForm' ).each(function(){ this.reset(); });
 		               	}, 1400);
 			               
 			            } else {
-			               $('#form-message-warning').html(msg);
-				            $('#form-message-warning').fadeIn();
+			               	$('#form-message-warning').html(msg);
+				        	$('#form-message-warning').fadeIn();
 				            $submit.css('display', 'none');
 			            }
 				      },
 				      error: function() {
 				      	$('#form-message-warning').html("Something went wrong. Please try again.");
-				         $('#form-message-warning').fadeIn();
-				         $submit.css('display', 'none');
+				        $('#form-message-warning').fadeIn();
+				        $submit.css('display', 'none');
 				      }
 			      });    		
 		  		} // end submitHandler
@@ -83,3 +81,27 @@
 	contactForm();
 
 })(jQuery);
+
+function sendMail(){
+	var params = {
+	  name: document.getElementById("name").value,
+	  email: document.getElementById("email").value,
+	  subject: document.getElementById("subject").value,
+	  message: document.getElementById("message").value,
+	};
+  
+	const serviceID = "service_0zf7wog";
+	const templateID = "template_b9myzuv";
+  
+	emailjs
+	  .send(serviceID, templateID, params)
+	  .then((res)=>{
+		document.getElementById("name").value = "";
+		document.getElementById("email").value = "";
+		document.getElementById("subject").value = "";
+		document.getElementById("message").value = "";
+		console.log(res);
+		alert("Your message sent successfully !");
+	  })
+	  .catch((err) => console.log(err));
+  }

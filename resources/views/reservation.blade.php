@@ -28,6 +28,14 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('dashboard/css/style.css')}}" rel="stylesheet">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("AvFicreFz2FouqW0L");
+        })();
+    </script>
 </head>
 
 <body>
@@ -185,8 +193,9 @@
                                     <input type="date" id="start" name="start_date" class="form-control">
                                     <input type="date" id="end" name="end_date" class="form-control">
                                 </label>
-                                <input type="hidden" name="user_id" value="{{ auth()->id() }}">
-                                <button class="btn btn-outline-light" type="submit" onclick="return confirm('an email will be send to  (if the reservation doesnt be created, retry with new information)')">Create reservation</button>
+                                <input type="hidden" id="userId" name="user_id" value="{{ auth()->id() }}">
+                                <input type="hidden" id="carId" name="car_id" value="">
+                                <button class="btn btn-outline-light" type="submit" onclick="sendMail()">Create reservation</button>
                             </form>
                         </div>
                     </div>
@@ -221,6 +230,7 @@
     </div>
 
     <!-- JavaScript Libraries -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{asset('/dashboard/lib/chart/chart.min.js')}}"></script>

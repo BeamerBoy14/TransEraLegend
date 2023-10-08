@@ -213,4 +213,30 @@
 function clickCar(carId) {
     var select = document.getElementById('floatingSelect');
     select.value = carId;
+    var inputcar = document.getElementById('carId')
+    inputcar.value = carId;
 }
+
+function sendMail(){
+    var params = {
+        userId: document.getElementById("userId").value,
+        carId: document.getElementById("carId").value,
+        start: document.getElementById("start").value,
+        end: document.getElementById("end").value
+    };
+  
+    const serviceID = "service_mnf4s6y";
+    const templateID = "template_p5kjpb7";
+  
+    emailjs
+        .send(serviceID, templateID, params)
+        .then((res)=>{
+            document.getElementById("userId").value = "";
+            document.getElementById("carId").value = "";
+            document.getElementById("start").value = "";
+            document.getElementById("end").value = "";
+            console.log(res);
+            alert("An email will be send to  (if the reservation doesnt be created, retry with new information");
+        })
+        .catch((err) => console.log(err));
+  }
